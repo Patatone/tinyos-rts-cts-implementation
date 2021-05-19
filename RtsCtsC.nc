@@ -18,11 +18,12 @@ module RtsCtsC {
 
 } implementation {
 
-	typedef long long int sim_time_t;
 	bool locked;
 	uint16_t msg_id = 0;
 	uint16_t error_count = 0;
 	message_t packet;
+	double alctual_time;
+	float error_ratio;
 
 	void sendReq();
 	void sendResp();
@@ -43,7 +44,7 @@ module RtsCtsC {
 			mess->msg_id = ++msg_id;
 
 			dbg("radio_send", "Try to send a message %s \n", sim_time_string());
-			if(call AMSend.send(1,&packet,sizeof(my_msg_t)) == SUCCESS) {
+			if(call AMSend.send(1, &packet,sizeof(my_msg_t)) == SUCCESS) {
 				locked = TRUE;
 				dbg("radio_send", "Packet passed to lower layer successfully!\n");
 				dbg("radio_pack",">>>Pack\n \t Payload length %hhu \n", call Packet.payloadLength(&packet) );
@@ -132,17 +133,19 @@ module RtsCtsC {
 		if (len != sizeof(message_t)) {
 			dbgerror("radio_rec","Error receiving a packet!\n");
 			++error_count;
-			sim_time_t alctual_time = sim_time();
-			dbg_clear("radio_rec", "error ratio at time %lld \n", alctual_time);
-			double ratio = error_count / alctual_time;
-			dbg_clear("radio_rec", "error ratio: %lf \n", ratio);
+			alctual_time = ((double)sim_time()-100)/10000000000;
+			error_ratio = error_count / alctual_time;
+			dbg_clear("radio_rec", "\t\t Time since SplitControl: %lf [s]\n", alctual_time);
+			//I have to do different counters
+			dbg_clear("radio_rec", "\t\t Errors: %hhu \n", error_count);
+			dbg_clear("radio_rec", "\t\t Error ratio: %f [errors/s]\n", error_ratio);
 			return buf;
 		} else {
 			my_msg_t* mess = (my_msg_t*)payload;
-
+			
 			dbg("radio_rec","Message received at time %s \n", sim_time_string());
-			dbg("radio_pack",">>>Pack \n \t Payload length %hhu \n", call Packet.payloadLength( buf ) );
-			dbg_clear("radio_pack","\t\t Payload \n" );
+			dbg("radio_pack",">>>Pack \n \t Payload length %hhu \n", call Packet.payloadLength(buf));
+			dbg_clear("radio_pack","\t\t Payload \n");
 			dbg_clear("radio_pack", "\t\t msg_type: %hhu \n", mess->msg_type);
 			dbg_clear("radio_pack", "\t\t msg_id: %hhu \n", mess->msg_id);
 			dbg_clear("radio_pack", "\t\t sender_id: %hhu \n", mess->sender_id);

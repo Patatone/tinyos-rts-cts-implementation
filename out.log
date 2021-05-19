@@ -1,0 +1,4524 @@
+********************************************
+*                                          *
+*             TOSSIM Script                *
+*                                          *
+********************************************
+Initializing mac....
+Initializing radio channels....
+    using topology file: topology.txt
+    using noise file: meyer-heavy.txt
+Initializing simulator....
+Activate debug message on channel init
+Activate debug message on channel boot
+Activate debug message on channel radio
+Activate debug message on channel radio_s
+Activate debug message on channel radio_ack
+Activate debug message on channel radio_rec
+Activate debug message on channel radio_pack
+Activate debug message on channel role
+Creating node 1...
+>>>Will boot at time 0 [sec]
+Creating node 2...
+>>>Will boot at time 0 [sec]
+Creating node 3...
+>>>Will boot at time 0 [sec]
+Creating node 4...
+>>>Will boot at time 0 [sec]
+Creating node 5...
+>>>Will boot at time 0 [sec]
+Creating node 6...
+>>>Will boot at time 0 [sec]
+Creating radio channels...
+>>>Setting radio channel from node  1  to node  2  with gain  -60.0  dBm
+>>>Setting radio channel from node  1  to node  3  with gain  -60.0  dBm
+>>>Setting radio channel from node  1  to node  4  with gain  -60.0  dBm
+>>>Setting radio channel from node  1  to node  5  with gain  -60.0  dBm
+>>>Setting radio channel from node  1  to node  6  with gain  -60.0  dBm
+>>>Setting radio channel from node  2  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  3  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  4  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  5  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  6  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  2  to node  4  with gain  -60.0  dBm
+>>>Setting radio channel from node  4  to node  2  with gain  -60.0  dBm
+>>>Setting radio channel from node  2  to node  3  with gain  -60.0  dBm
+>>>Setting radio channel from node  3  to node  2  with gain  -60.0  dBm
+>>>Setting radio channel from node  4  to node  5  with gain  -60.0  dBm
+>>>Setting radio channel from node  5  to node  4  with gain  -60.0  dBm
+>>>Setting radio channel from node  3  to node  4  with gain  -60.0  dBm
+>>>Setting radio channel from node  4  to node  3  with gain  -60.0  dBm
+>>>Setting radio channel from node  5  to node  3  with gain  -60.0  dBm
+>>>Setting radio channel from node  3  to node  5  with gain  -60.0  dBm
+>>>Setting radio channel from node  5  to node  6  with gain  -60.0  dBm
+>>>Setting radio channel from node  6  to node  5  with gain  -60.0  dBm
+>>>Setting radio channel from node  6  to node  3  with gain  -60.0  dBm
+>>>Setting radio channel from node  3  to node  6  with gain  -60.0  dBm
+Initializing Closest Pattern Matching (CPM)...
+Reading noise model data file: meyer-heavy.txt
+Loading:##Done!
+>>>Creating noise model for node: 1
+>>>Creating noise model for node: 2
+>>>Creating noise model for node: 3
+>>>Creating noise model for node: 4
+>>>Creating noise model for node: 5
+>>>Creating noise model for node: 6
+Start simulation with TOSSIM! 
+
+
+
+DEBUG (1): Application booted.
+DEBUG (6): Application booted.
+DEBUG (3): Application booted.
+DEBUG (2): Application booted.
+DEBUG (5): Application booted.
+DEBUG (4): Application booted.
+DEBUG (1): Radio on at time 100 
+DEBUG (2): Radio on at time 100 
+DEBUG (3): Radio on at time 100 
+DEBUG (6): Radio on at time 100 
+DEBUG (5): Radio on at time 100 
+DEBUG (4): Radio on at time 100 
+DEBUG (6): Try to send a message 0:0:0.976562510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 1 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 9814452940 [s]
+		 Time from radio on: 0.981445 [s]
+		 Errors: 1 
+		 Error ratio: 1.018906 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:0.981613139 
+DEBUG (6): Try to send a message 0:0:1.953125010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 2 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:0:1.953125010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 1 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 19545745865 [s]
+		 Time from radio on: 1.954575 [s]
+		 Errors: 2 
+		 Error ratio: 1.023241 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:1.954742432 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 19598846141 [s]
+		 Time from radio on: 1.959885 [s]
+		 Errors: 3 
+		 Error ratio: 1.530702 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:1.960052459 
+DEBUG (6): Try to send a message 0:0:2.929687510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 3 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:0:2.929687510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 1 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 29308471712 [s]
+		 Time from radio on: 2.930847 [s]
+		 Errors: 4 
+		 Error ratio: 1.364793 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:2.931015016 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 29336547720 [s]
+		 Time from radio on: 2.933655 [s]
+		 Errors: 5 
+		 Error ratio: 1.704359 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:2.933822617 
+DEBUG (4): Try to send a message 0:0:3.906250010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 1 
+		 sender_id: 4 
+DEBUG (6): Try to send a message 0:0:3.906250010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 4 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:0:3.906250010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 2 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 39103546003 [s]
+		 Time from radio on: 3.910355 [s]
+		 Errors: 6 
+		 Error ratio: 1.534388 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:3.910522446 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 39143981558 [s]
+		 Time from radio on: 3.914398 [s]
+		 Errors: 7 
+		 Error ratio: 1.788270 [errors/s]
+DEBUG (4): Packet sent... at time 0:0:3.914566001 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 39174498958 [s]
+		 Time from radio on: 3.917450 [s]
+		 Errors: 8 
+		 Error ratio: 2.042145 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:3.917617741 
+DEBUG (5): Try to send a message 0:0:4.882812510 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 1 
+		 sender_id: 5 
+DEBUG (6): Try to send a message 0:0:4.882812510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 5 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 48845672605 [s]
+		 Time from radio on: 4.884567 [s]
+		 Errors: 9 
+		 Error ratio: 1.842538 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:4.884735106 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 48869933938 [s]
+		 Time from radio on: 4.886993 [s]
+		 Errors: 10 
+		 Error ratio: 2.046248 [errors/s]
+DEBUG (5): Packet sent... at time 0:0:4.887161239 
+DEBUG (2): Try to send a message 0:0:5.859375010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 3 
+		 sender_id: 2 
+DEBUG (3): Try to send a message 0:0:5.859375010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 2 
+		 sender_id: 3 
+DEBUG (6): Try to send a message 0:0:5.859375010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 6 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 58614959693 [s]
+		 Time from radio on: 5.861496 [s]
+		 Errors: 11 
+		 Error ratio: 1.876654 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:5.861663815 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 58651122812 [s]
+		 Time from radio on: 5.865112 [s]
+		 Errors: 12 
+		 Error ratio: 2.045997 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:5.865280126 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 58666381512 [s]
+		 Time from radio on: 5.866638 [s]
+		 Errors: 13 
+		 Error ratio: 2.215920 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:5.866805996 
+DEBUG (6): Try to send a message 0:0:6.835937510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 7 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 68411407267 [s]
+		 Time from radio on: 6.841141 [s]
+		 Errors: 14 
+		 Error ratio: 2.046442 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:6.841308572 
+DEBUG (2): Try to send a message 0:0:7.812500010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 4 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:0:7.812500010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 8 
+		 sender_id: 6 
+DEBUG (4): Try to send a message 0:0:7.812500010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 2 
+		 sender_id: 4 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 78181609877 [s]
+		 Time from radio on: 7.818161 [s]
+		 Errors: 15 
+		 Error ratio: 1.918610 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:7.818328833 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 78199309969 [s]
+		 Time from radio on: 7.819931 [s]
+		 Errors: 16 
+		 Error ratio: 2.046054 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:7.820098842 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 78214110908 [s]
+		 Time from radio on: 7.821411 [s]
+		 Errors: 17 
+		 Error ratio: 2.173521 [errors/s]
+DEBUG (4): Packet sent... at time 0:0:7.821578936 
+DEBUG (6): Try to send a message 0:0:8.789062510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 9 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:0:8.789062510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 3 
+		 sender_id: 3 
+DEBUG (6): Packet sent... at time 0:0:8.792373647 
+DEBUG (3): Packet sent... at time 0:0:8.792388906 
+DEBUG (2): Try to send a message 0:0:9.765625010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 5 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:0:9.765625010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 10 
+		 sender_id: 6 
+DEBUG (5): Try to send a message 0:0:9.765625010 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 2 
+		 sender_id: 5 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 97725829772 [s]
+		 Time from radio on: 9.772583 [s]
+		 Errors: 18 
+		 Error ratio: 1.841888 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:9.772750822 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 97741088472 [s]
+		 Time from radio on: 9.774109 [s]
+		 Errors: 19 
+		 Error ratio: 1.943911 [errors/s]
+DEBUG (5): Packet sent... at time 0:0:9.774276692 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 97755126476 [s]
+		 Time from radio on: 9.775513 [s]
+		 Errors: 20 
+		 Error ratio: 2.045928 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:9.775680493 
+DEBUG (6): Try to send a message 0:0:10.742187510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 11 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 107451934739 [s]
+		 Time from radio on: 10.745193 [s]
+		 Errors: 21 
+		 Error ratio: 1.954362 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:10.745361319 
+DEBUG (6): Try to send a message 0:0:11.718750010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 12 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:0:11.718750010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 4 
+		 sender_id: 3 
+DEBUG (4): Try to send a message 0:0:11.718750010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 3 
+		 sender_id: 4 
+DEBUG (2): Try to send a message 0:0:11.718750010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 6 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 117215576108 [s]
+		 Time from radio on: 11.721558 [s]
+		 Errors: 22 
+		 Error ratio: 1.876884 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:11.721725456 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 117226104611 [s]
+		 Time from radio on: 11.722610 [s]
+		 Errors: 23 
+		 Error ratio: 1.962020 [errors/s]
+DEBUG (4): Packet sent... at time 0:0:11.722778306 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 117256011663 [s]
+		 Time from radio on: 11.725601 [s]
+		 Errors: 24 
+		 Error ratio: 2.046803 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:11.725769012 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 117272491059 [s]
+		 Time from radio on: 11.727249 [s]
+		 Errors: 25 
+		 Error ratio: 2.131787 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:11.727416951 
+DEBUG (6): Try to send a message 0:0:12.695312510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 13 
+		 sender_id: 6 
+DEBUG (6): Packet sent... at time 0:0:12.703033412 
+DEBUG (2): Try to send a message 0:0:13.671875010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 7 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:0:13.671875010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 14 
+		 sender_id: 6 
+DEBUG (6): Packet sent... at time 0:0:13.677703833 
+DEBUG (2): Packet sent... at time 0:0:13.677886937 
+DEBUG (6): Try to send a message 0:0:14.648437510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 15 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:0:14.648437510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 5 
+		 sender_id: 3 
+DEBUG (5): Try to send a message 0:0:14.648437510 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 3 
+		 sender_id: 5 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 146527252047 [s]
+		 Time from radio on: 14.652725 [s]
+		 Errors: 26 
+		 Error ratio: 1.774414 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:14.652893050 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 146535491745 [s]
+		 Time from radio on: 14.653549 [s]
+		 Errors: 27 
+		 Error ratio: 1.842557 [errors/s]
+DEBUG (5): Packet sent... at time 0:0:14.653717020 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 146548919401 [s]
+		 Time from radio on: 14.654892 [s]
+		 Errors: 28 
+		 Error ratio: 1.910625 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:14.655059785 
+DEBUG (4): Try to send a message 0:0:15.625000010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 4 
+		 sender_id: 4 
+DEBUG (6): Try to send a message 0:0:15.625000010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 16 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:0:15.625000010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 8 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 156293029634 [s]
+		 Time from radio on: 15.629303 [s]
+		 Errors: 29 
+		 Error ratio: 1.855489 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:15.629470809 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 156300964158 [s]
+		 Time from radio on: 15.630096 [s]
+		 Errors: 30 
+		 Error ratio: 1.919374 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:15.630264261 
+DEBUG (4): Packet sent... at time 0:0:15.633727986 
+DEBUG (6): Try to send a message 0:0:16.601562510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 17 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 166092223774 [s]
+		 Time from radio on: 16.609222 [s]
+		 Errors: 31 
+		 Error ratio: 1.866433 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:16.609390223 
+DEBUG (6): Try to send a message 0:0:17.578125010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 18 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:0:17.578125010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 6 
+		 sender_id: 3 
+DEBUG (2): Try to send a message 0:0:17.578125010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 9 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 175802154519 [s]
+		 Time from radio on: 17.580215 [s]
+		 Errors: 32 
+		 Error ratio: 1.820228 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:17.580383297 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 175858153948 [s]
+		 Time from radio on: 17.585815 [s]
+		 Errors: 33 
+		 Error ratio: 1.876512 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:17.585983240 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 175888213587 [s]
+		 Time from radio on: 17.588821 [s]
+		 Errors: 34 
+		 Error ratio: 1.933046 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:17.588989204 
+DEBUG (6): Try to send a message 0:0:18.554687510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 19 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 185578765783 [s]
+		 Time from radio on: 18.557877 [s]
+		 Errors: 35 
+		 Error ratio: 1.885992 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:18.558044424 
+DEBUG (6): Try to send a message 0:0:19.531250010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 20 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:0:19.531250010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 10 
+		 sender_id: 2 
+DEBUG (4): Try to send a message 0:0:19.531250010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 5 
+		 sender_id: 4 
+DEBUG (5): Try to send a message 0:0:19.531250010 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 4 
+		 sender_id: 5 
+DEBUG (2): Packet sent... at time 0:0:19.537399266 
+DEBUG (6): Packet sent... at time 0:0:19.537841768 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 195384215990 [s]
+		 Time from radio on: 19.538422 [s]
+		 Errors: 36 
+		 Error ratio: 1.842523 [errors/s]
+DEBUG (4): Packet sent... at time 0:0:19.538589444 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 195402221256 [s]
+		 Time from radio on: 19.540222 [s]
+		 Errors: 37 
+		 Error ratio: 1.893530 [errors/s]
+DEBUG (5): Packet sent... at time 0:0:19.540389971 
+DEBUG (6): Try to send a message 0:0:20.507812510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 21 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:0:20.507812510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 7 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 205146178902 [s]
+		 Time from radio on: 20.514618 [s]
+		 Errors: 38 
+		 Error ratio: 1.852338 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:20.514785735 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 205162047950 [s]
+		 Time from radio on: 20.516205 [s]
+		 Errors: 39 
+		 Error ratio: 1.900936 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:20.516372640 
+DEBUG (2): Try to send a message 0:0:21.484375010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 11 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:0:21.484375010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 22 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 214925536732 [s]
+		 Time from radio on: 21.492554 [s]
+		 Errors: 40 
+		 Error ratio: 1.861110 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:21.492721518 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 214943541998 [s]
+		 Time from radio on: 21.494354 [s]
+		 Errors: 41 
+		 Error ratio: 1.907478 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:21.494522045 
+DEBUG (6): Try to send a message 0:0:22.460937510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 23 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 224696197103 [s]
+		 Time from radio on: 22.469620 [s]
+		 Errors: 42 
+		 Error ratio: 1.869191 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:22.469787556 
+DEBUG (2): Try to send a message 0:0:23.437500010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 12 
+		 sender_id: 2 
+DEBUG (3): Try to send a message 0:0:23.437500010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 8 
+		 sender_id: 3 
+DEBUG (4): Try to send a message 0:0:23.437500010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 6 
+		 sender_id: 4 
+DEBUG (6): Try to send a message 0:0:23.437500010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 24 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 234409179588 [s]
+		 Time from radio on: 23.440918 [s]
+		 Errors: 43 
+		 Error ratio: 1.834399 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:23.441085804 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 234429473659 [s]
+		 Time from radio on: 23.442947 [s]
+		 Errors: 44 
+		 Error ratio: 1.876897 [errors/s]
+DEBUG (4): Packet sent... at time 0:0:23.443115211 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 234445953055 [s]
+		 Time from radio on: 23.444595 [s]
+		 Errors: 45 
+		 Error ratio: 1.919419 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:23.444763151 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 234477691151 [s]
+		 Time from radio on: 23.447769 [s]
+		 Errors: 46 
+		 Error ratio: 1.961807 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:23.447936960 
+DEBUG (5): Try to send a message 0:0:24.414062510 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 5 
+		 sender_id: 5 
+DEBUG (6): Try to send a message 0:0:24.414062510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 25 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 244162445041 [s]
+		 Time from radio on: 24.416244 [s]
+		 Errors: 47 
+		 Error ratio: 1.924948 [errors/s]
+DEBUG (5): Packet sent... at time 0:0:24.416412349 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 244181365829 [s]
+		 Time from radio on: 24.418137 [s]
+		 Errors: 48 
+		 Error ratio: 1.965752 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:24.418304428 
+DEBUG (2): Try to send a message 0:0:25.390625010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 13 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:0:25.390625010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 26 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 253917236364 [s]
+		 Time from radio on: 25.391724 [s]
+		 Errors: 49 
+		 Error ratio: 1.929763 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:25.391891482 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 253993529864 [s]
+		 Time from radio on: 25.399353 [s]
+		 Errors: 50 
+		 Error ratio: 1.968554 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:25.399520832 
+DEBUG (6): Try to send a message 0:0:26.367187510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 27 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:0:26.367187510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 9 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 263684844995 [s]
+		 Time from radio on: 26.368484 [s]
+		 Errors: 51 
+		 Error ratio: 1.934127 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:26.368652345 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 263759765212 [s]
+		 Time from radio on: 26.375977 [s]
+		 Errors: 52 
+		 Error ratio: 1.971491 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:26.376144366 
+DEBUG (2): Try to send a message 0:0:27.343750010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 14 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:0:27.343750010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 28 
+		 sender_id: 6 
+DEBUG (4): Try to send a message 0:0:27.343750010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 7 
+		 sender_id: 4 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 273512725491 [s]
+		 Time from radio on: 27.351273 [s]
+		 Errors: 53 
+		 Error ratio: 1.937753 [errors/s]
+DEBUG (4): Packet sent... at time 0:0:27.351440394 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 273518981558 [s]
+		 Time from radio on: 27.351898 [s]
+		 Errors: 54 
+		 Error ratio: 1.974269 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:27.352066001 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 273540801499 [s]
+		 Time from radio on: 27.354080 [s]
+		 Errors: 55 
+		 Error ratio: 2.010669 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:27.354247995 
+DEBUG (6): Try to send a message 0:0:28.320312510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 29 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 283221740714 [s]
+		 Time from radio on: 28.322174 [s]
+		 Errors: 56 
+		 Error ratio: 1.977249 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:28.322341917 
+DEBUG (6): Try to send a message 0:0:29.296875010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 30 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:0:29.296875010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 10 
+		 sender_id: 3 
+DEBUG (5): Try to send a message 0:0:29.296875010 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 6 
+		 sender_id: 5 
+DEBUG (2): Try to send a message 0:0:29.296875010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 15 
+		 sender_id: 2 
+DEBUG (2): Packet sent... at time 0:0:29.298904417 
+DEBUG (5): Packet sent... at time 0:0:29.299255367 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 293010711525 [s]
+		 Time from radio on: 29.301071 [s]
+		 Errors: 57 
+		 Error ratio: 1.945321 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:29.301238998 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 293073119608 [s]
+		 Time from radio on: 29.307312 [s]
+		 Errors: 58 
+		 Error ratio: 1.979028 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:29.307479806 
+DEBUG (6): Try to send a message 0:0:30.273437510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 31 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 302800903032 [s]
+		 Time from radio on: 30.280090 [s]
+		 Errors: 59 
+		 Error ratio: 1.948475 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:30.280258148 
+DEBUG (6): Try to send a message 0:0:31.250000010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 32 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:0:31.250000010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 16 
+		 sender_id: 2 
+DEBUG (4): Try to send a message 0:0:31.250000010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 8 
+		 sender_id: 4 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 312535247697 [s]
+		 Time from radio on: 31.253525 [s]
+		 Errors: 60 
+		 Error ratio: 1.919783 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:31.253692615 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 312567138380 [s]
+		 Time from radio on: 31.256714 [s]
+		 Errors: 61 
+		 Error ratio: 1.951581 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:31.256881683 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 312581786732 [s]
+		 Time from radio on: 31.258179 [s]
+		 Errors: 62 
+		 Error ratio: 1.983481 [errors/s]
+DEBUG (4): Packet sent... at time 0:0:31.258346518 
+DEBUG (6): Try to send a message 0:0:32.226562510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 33 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:0:32.226562510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 11 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 322276458777 [s]
+		 Time from radio on: 32.227646 [s]
+		 Errors: 63 
+		 Error ratio: 1.954843 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:32.227813723 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 322369842021 [s]
+		 Time from radio on: 32.236984 [s]
+		 Errors: 64 
+		 Error ratio: 1.985297 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:32.237152047 
+DEBUG (2): Try to send a message 0:0:33.203125010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 17 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:0:33.203125010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 34 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 332079315005 [s]
+		 Time from radio on: 33.207931 [s]
+		 Errors: 65 
+		 Error ratio: 1.957364 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:33.208099346 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 332104644447 [s]
+		 Time from radio on: 33.210464 [s]
+		 Errors: 66 
+		 Error ratio: 1.987325 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:33.210632290 
+DEBUG (5): Try to send a message 0:0:34.179687510 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 7 
+		 sender_id: 5 
+DEBUG (6): Try to send a message 0:0:34.179687510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 35 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 341835937372 [s]
+		 Time from radio on: 34.183594 [s]
+		 Errors: 67 
+		 Error ratio: 1.960005 [errors/s]
+DEBUG (5): Packet sent... at time 0:0:34.183761582 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 341856231443 [s]
+		 Time from radio on: 34.185623 [s]
+		 Errors: 68 
+		 Error ratio: 1.989140 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:34.185790990 
+DEBUG (6): Try to send a message 0:0:35.156250010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 36 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:0:35.156250010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 12 
+		 sender_id: 3 
+DEBUG (2): Try to send a message 0:0:35.156250010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 18 
+		 sender_id: 2 
+DEBUG (4): Try to send a message 0:0:35.156250010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 9 
+		 sender_id: 4 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 351579589844 [s]
+		 Time from radio on: 35.157959 [s]
+		 Errors: 69 
+		 Error ratio: 1.962571 [errors/s]
+DEBUG (4): Packet sent... at time 0:0:35.158126830 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 351650695386 [s]
+		 Time from radio on: 35.165070 [s]
+		 Errors: 70 
+		 Error ratio: 1.990612 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:35.165237384 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 351662597172 [s]
+		 Time from radio on: 35.166260 [s]
+		 Errors: 71 
+		 Error ratio: 2.018981 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:35.166427562 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 351676177415 [s]
+		 Time from radio on: 35.167618 [s]
+		 Errors: 72 
+		 Error ratio: 2.047338 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:35.167785587 
+DEBUG (6): Try to send a message 0:0:36.132812510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 37 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 361342926039 [s]
+		 Time from radio on: 36.134293 [s]
+		 Errors: 73 
+		 Error ratio: 2.020241 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:36.134460449 
+DEBUG (6): Try to send a message 0:0:37.109375010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 38 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:0:37.109375010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 19 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 371126403718 [s]
+		 Time from radio on: 37.112640 [s]
+		 Errors: 74 
+		 Error ratio: 1.993930 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:37.112808217 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 371158446988 [s]
+		 Time from radio on: 37.115845 [s]
+		 Errors: 75 
+		 Error ratio: 2.020700 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:37.116012544 
+DEBUG (6): Try to send a message 0:0:38.085937510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 39 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:0:38.085937510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 13 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 380883483846 [s]
+		 Time from radio on: 38.088348 [s]
+		 Errors: 76 
+		 Error ratio: 1.995361 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:38.088516230 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 380891876131 [s]
+		 Time from radio on: 38.089188 [s]
+		 Errors: 77 
+		 Error ratio: 2.021571 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:38.089355458 
+DEBUG (6): Try to send a message 0:0:39.062500010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 40 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:0:39.062500010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 20 
+		 sender_id: 2 
+DEBUG (4): Try to send a message 0:0:39.062500010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 10 
+		 sender_id: 4 
+DEBUG (5): Try to send a message 0:0:39.062500010 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 8 
+		 sender_id: 5 
+DEBUG (6): Packet sent... at time 0:0:39.067626933 
+DEBUG (2): Packet sent... at time 0:0:39.067657450 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 390697173751 [s]
+		 Time from radio on: 39.069717 [s]
+		 Errors: 78 
+		 Error ratio: 1.996431 [errors/s]
+DEBUG (5): Packet sent... at time 0:0:39.069885220 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 390707702254 [s]
+		 Time from radio on: 39.070770 [s]
+		 Errors: 79 
+		 Error ratio: 2.021972 [errors/s]
+DEBUG (4): Packet sent... at time 0:0:39.070938071 
+DEBUG (6): Try to send a message 0:0:40.039062510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 41 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 400458678902 [s]
+		 Time from radio on: 40.045868 [s]
+		 Errors: 80 
+		 Error ratio: 1.997709 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:40.046035735 
+DEBUG (6): Try to send a message 0:0:41.015625010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 42 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:0:41.015625010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 14 
+		 sender_id: 3 
+DEBUG (2): Try to send a message 0:0:41.015625010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 21 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 410189819240 [s]
+		 Time from radio on: 41.018982 [s]
+		 Errors: 81 
+		 Error ratio: 1.974696 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:41.019149769 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 410198058938 [s]
+		 Time from radio on: 41.019806 [s]
+		 Errors: 82 
+		 Error ratio: 1.999034 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:41.019973739 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 410253905780 [s]
+		 Time from radio on: 41.025391 [s]
+		 Errors: 83 
+		 Error ratio: 2.023137 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:41.025558423 
+DEBUG (6): Try to send a message 0:0:41.992187510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 43 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 419969024483 [s]
+		 Time from radio on: 41.996902 [s]
+		 Errors: 84 
+		 Error ratio: 2.000148 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:41.997070294 
+DEBUG (4): Try to send a message 0:0:42.968750010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 11 
+		 sender_id: 4 
+DEBUG (6): Try to send a message 0:0:42.968750010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 44 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:0:42.968750010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 22 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 429731750330 [s]
+		 Time from radio on: 42.973175 [s]
+		 Errors: 85 
+		 Error ratio: 1.977978 [errors/s]
+DEBUG (4): Packet sent... at time 0:0:42.973342878 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 429785003193 [s]
+		 Time from radio on: 42.978500 [s]
+		 Errors: 86 
+		 Error ratio: 2.001000 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:42.978668165 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 429791411847 [s]
+		 Time from radio on: 42.979141 [s]
+		 Errors: 87 
+		 Error ratio: 2.024238 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:42.979309030 
+DEBUG (5): Try to send a message 0:0:43.945312510 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 9 
+		 sender_id: 5 
+DEBUG (3): Try to send a message 0:0:43.945312510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 15 
+		 sender_id: 3 
+DEBUG (6): Try to send a message 0:0:43.945312510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 45 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 439464721712 [s]
+		 Time from radio on: 43.946472 [s]
+		 Errors: 88 
+		 Error ratio: 2.002436 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:43.946640016 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 439478454542 [s]
+		 Time from radio on: 43.947845 [s]
+		 Errors: 89 
+		 Error ratio: 2.025128 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:43.948013299 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 439506988311 [s]
+		 Time from radio on: 43.950699 [s]
+		 Errors: 90 
+		 Error ratio: 2.047749 [errors/s]
+DEBUG (5): Packet sent... at time 0:0:43.950866676 
+DEBUG (2): Try to send a message 0:0:44.921875010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 23 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:0:44.921875010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 46 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 449284667684 [s]
+		 Time from radio on: 44.928467 [s]
+		 Errors: 91 
+		 Error ratio: 2.025442 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:44.928634614 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 449310607474 [s]
+		 Time from radio on: 44.931061 [s]
+		 Errors: 92 
+		 Error ratio: 2.047581 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:44.931228593 
+DEBUG (6): Try to send a message 0:0:45.898437510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 47 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 459029693439 [s]
+		 Time from radio on: 45.902969 [s]
+		 Errors: 93 
+		 Error ratio: 2.026013 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:45.903137189 
+DEBUG (4): Try to send a message 0:0:46.875000010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 12 
+		 sender_id: 4 
+DEBUG (6): Try to send a message 0:0:46.875000010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 48 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:0:46.875000010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 16 
+		 sender_id: 3 
+DEBUG (2): Try to send a message 0:0:46.875000010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 24 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 468767242431 [s]
+		 Time from radio on: 46.876724 [s]
+		 Errors: 94 
+		 Error ratio: 2.005260 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:46.876892088 
+DEBUG (6): Packet sent... at time 0:0:46.882019012 
+DEBUG (3): Packet sent... at time 0:0:46.882156340 
+DEBUG (4): Packet sent... at time 0:0:46.882308927 
+DEBUG (6): Try to send a message 0:0:47.851562510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 49 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 478529815691 [s]
+		 Time from radio on: 47.852982 [s]
+		 Errors: 95 
+		 Error ratio: 1.985247 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:47.853149414 
+DEBUG (2): Try to send a message 0:0:48.828125010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 25 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:0:48.828125010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 50 
+		 sender_id: 6 
+DEBUG (5): Try to send a message 0:0:48.828125010 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 10 
+		 sender_id: 5 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 488294982930 [s]
+		 Time from radio on: 48.829498 [s]
+		 Errors: 96 
+		 Error ratio: 1.966025 [errors/s]
+DEBUG (5): Packet sent... at time 0:0:48.829666138 
+DEBUG (2): Packet sent... at time 0:0:48.835815394 
+DEBUG (6): Packet sent... at time 0:0:48.836257897 
+DEBUG (6): Try to send a message 0:0:49.804687510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 51 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:0:49.804687510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 17 
+		 sender_id: 3 
+DEBUG (6): Packet sent... at time 0:0:49.810272194 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 498136748843 [s]
+		 Time from radio on: 49.813675 [s]
+		 Errors: 97 
+		 Error ratio: 1.947256 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:49.813842730 
+DEBUG (4): Try to send a message 0:0:50.781250010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 13 
+		 sender_id: 4 
+DEBUG (6): Try to send a message 0:0:50.781250010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 52 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:0:50.781250010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 26 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 507830810540 [s]
+		 Time from radio on: 50.783081 [s]
+		 Errors: 98 
+		 Error ratio: 1.929777 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:50.783248899 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 507857971026 [s]
+		 Time from radio on: 50.785797 [s]
+		 Errors: 99 
+		 Error ratio: 1.949364 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:50.785964948 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 507914275629 [s]
+		 Time from radio on: 50.791428 [s]
+		 Errors: 100 
+		 Error ratio: 1.968836 [errors/s]
+DEBUG (4): Packet sent... at time 0:0:50.791595408 
+DEBUG (6): Try to send a message 0:0:51.757812510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 53 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 517682799782 [s]
+		 Time from radio on: 51.768280 [s]
+		 Errors: 101 
+		 Error ratio: 1.951002 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:51.768447823 
+DEBUG (2): Try to send a message 0:0:52.734375010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 27 
+		 sender_id: 2 
+DEBUG (3): Try to send a message 0:0:52.734375010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 18 
+		 sender_id: 3 
+DEBUG (6): Try to send a message 0:0:52.734375010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 54 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 527375945957 [s]
+		 Time from radio on: 52.737595 [s]
+		 Errors: 102 
+		 Error ratio: 1.934104 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:52.737762441 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 527390289135 [s]
+		 Time from radio on: 52.739029 [s]
+		 Errors: 103 
+		 Error ratio: 1.953013 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:52.739196759 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 527410888380 [s]
+		 Time from radio on: 52.741089 [s]
+		 Errors: 104 
+		 Error ratio: 1.971897 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:52.741256683 
+DEBUG (5): Try to send a message 0:0:53.710937510 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 11 
+		 sender_id: 5 
+DEBUG (6): Try to send a message 0:0:53.710937510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 55 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 537142791653 [s]
+		 Time from radio on: 53.714279 [s]
+		 Errors: 105 
+		 Error ratio: 1.954787 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:53.714447011 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 537164153833 [s]
+		 Time from radio on: 53.716415 [s]
+		 Errors: 106 
+		 Error ratio: 1.973326 [errors/s]
+DEBUG (5): Packet sent... at time 0:0:53.716583229 
+DEBUG (2): Try to send a message 0:0:54.687500010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 28 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:0:54.687500010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 56 
+		 sender_id: 6 
+DEBUG (4): Try to send a message 0:0:54.687500010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 14 
+		 sender_id: 4 
+DEBUG (6): Packet sent... at time 0:0:54.694564788 
+DEBUG (4): Packet sent... at time 0:0:54.694976773 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 546964873843 [s]
+		 Time from radio on: 54.696487 [s]
+		 Errors: 107 
+		 Error ratio: 1.956250 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:54.696655230 
+DEBUG (6): Try to send a message 0:0:55.664062510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 57 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:0:55.664062510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 19 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 556680145133 [s]
+		 Time from radio on: 55.668015 [s]
+		 Errors: 108 
+		 Error ratio: 1.940073 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:55.668182359 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 556732940235 [s]
+		 Time from radio on: 55.673294 [s]
+		 Errors: 109 
+		 Error ratio: 1.957851 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:55.673461869 
+DEBUG (2): Try to send a message 0:0:56.640625010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 29 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:0:56.640625010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 58 
+		 sender_id: 6 
+DEBUG (6): Packet sent... at time 0:0:56.645782450 
+DEBUG (2): Packet sent... at time 0:0:56.645828226 
+DEBUG (6): Try to send a message 0:0:57.617187510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 59 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 576212768416 [s]
+		 Time from radio on: 57.621277 [s]
+		 Errors: 110 
+		 Error ratio: 1.909017 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:57.621444687 
+DEBUG (5): Try to send a message 0:0:58.593750010 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 12 
+		 sender_id: 5 
+DEBUG (2): Try to send a message 0:0:58.593750010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 30 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:0:58.593750010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 60 
+		 sender_id: 6 
+DEBUG (4): Try to send a message 0:0:58.593750010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 15 
+		 sender_id: 4 
+DEBUG (3): Try to send a message 0:0:58.593750010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 20 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 585962524368 [s]
+		 Time from radio on: 58.596252 [s]
+		 Errors: 111 
+		 Error ratio: 1.894319 [errors/s]
+DEBUG (3): Packet sent... at time 0:0:58.596420282 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 585970916653 [s]
+		 Time from radio on: 58.597092 [s]
+		 Errors: 112 
+		 Error ratio: 1.911358 [errors/s]
+DEBUG (2): Packet sent... at time 0:0:58.597259511 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 585981139982 [s]
+		 Time from radio on: 58.598114 [s]
+		 Errors: 113 
+		 Error ratio: 1.928390 [errors/s]
+DEBUG (4): Packet sent... at time 0:0:58.598281843 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 585998229726 [s]
+		 Time from radio on: 58.599823 [s]
+		 Errors: 114 
+		 Error ratio: 1.945398 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:58.599990818 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 586011657382 [s]
+		 Time from radio on: 58.601166 [s]
+		 Errors: 115 
+		 Error ratio: 1.962418 [errors/s]
+DEBUG (5): Packet sent... at time 0:0:58.601333583 
+DEBUG (6): Try to send a message 0:0:59.570312510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 61 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 595766143531 [s]
+		 Time from radio on: 59.576614 [s]
+		 Errors: 116 
+		 Error ratio: 1.947073 [errors/s]
+DEBUG (6): Packet sent... at time 0:0:59.576782198 
+DEBUG (6): Try to send a message 0:1:0.546875010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 62 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:1:0.546875010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 31 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 605545196187 [s]
+		 Time from radio on: 60.554520 [s]
+		 Errors: 117 
+		 Error ratio: 1.932143 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:0.554687464 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 605554198820 [s]
+		 Time from radio on: 60.555420 [s]
+		 Errors: 118 
+		 Error ratio: 1.948628 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:0.555587727 
+DEBUG (6): Try to send a message 0:1:1.523437510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 63 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:1:1.523437510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 21 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 615273284785 [s]
+		 Time from radio on: 61.527328 [s]
+		 Errors: 119 
+		 Error ratio: 1.934100 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:1.527496324 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 615283965875 [s]
+		 Time from radio on: 61.528397 [s]
+		 Errors: 120 
+		 Error ratio: 1.950319 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:1.528564433 
+DEBUG (6): Try to send a message 0:1:2.500000010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 64 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:1:2.500000010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 32 
+		 sender_id: 2 
+DEBUG (4): Try to send a message 0:1:2.500000010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 16 
+		 sender_id: 4 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 625065459923 [s]
+		 Time from radio on: 62.506546 [s]
+		 Errors: 121 
+		 Error ratio: 1.935797 [errors/s]
+DEBUG (4): Packet sent... at time 0:1:2.506713838 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 625093841105 [s]
+		 Time from radio on: 62.509384 [s]
+		 Errors: 122 
+		 Error ratio: 1.951707 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:2.509551956 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 625101012694 [s]
+		 Time from radio on: 62.510101 [s]
+		 Errors: 123 
+		 Error ratio: 1.967682 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:2.510269115 
+DEBUG (5): Try to send a message 0:1:3.476562510 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 13 
+		 sender_id: 5 
+DEBUG (6): Try to send a message 0:1:3.476562510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 65 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 634795226978 [s]
+		 Time from radio on: 63.479523 [s]
+		 Errors: 124 
+		 Error ratio: 1.953386 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:3.479690543 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 634815215875 [s]
+		 Time from radio on: 63.481522 [s]
+		 Errors: 125 
+		 Error ratio: 1.969077 [errors/s]
+DEBUG (5): Packet sent... at time 0:1:3.481689433 
+DEBUG (6): Try to send a message 0:1:4.453125010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 66 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:1:4.453125010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 22 
+		 sender_id: 3 
+DEBUG (2): Try to send a message 0:1:4.453125010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 33 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 644566802871 [s]
+		 Time from radio on: 64.456680 [s]
+		 Errors: 126 
+		 Error ratio: 1.954801 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:4.456848132 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 644575195156 [s]
+		 Time from radio on: 64.457520 [s]
+		 Errors: 127 
+		 Error ratio: 1.970290 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:4.457687361 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 644604034099 [s]
+		 Time from radio on: 64.460403 [s]
+		 Errors: 128 
+		 Error ratio: 1.985715 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:4.460571255 
+DEBUG (6): Try to send a message 0:1:5.429687510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 67 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 654318237280 [s]
+		 Time from radio on: 65.431824 [s]
+		 Errors: 129 
+		 Error ratio: 1.971518 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:5.431991573 
+DEBUG (4): Try to send a message 0:1:6.406250010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 17 
+		 sender_id: 4 
+DEBUG (6): Try to send a message 0:1:6.406250010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 68 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:1:6.406250010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 34 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 664120788334 [s]
+		 Time from radio on: 66.412079 [s]
+		 Errors: 130 
+		 Error ratio: 1.957475 [errors/s]
+DEBUG (4): Packet sent... at time 0:1:6.412246679 
+DEBUG (2): Packet sent... at time 0:1:6.415481523 
+DEBUG (6): Packet sent... at time 0:1:6.415679886 
+DEBUG (6): Try to send a message 0:1:7.382812510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 69 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:1:7.382812510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 23 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 673866119263 [s]
+		 Time from radio on: 67.386612 [s]
+		 Errors: 131 
+		 Error ratio: 1.944006 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:7.386779772 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 673882751246 [s]
+		 Time from radio on: 67.388275 [s]
+		 Errors: 132 
+		 Error ratio: 1.958798 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:7.388442970 
+DEBUG (5): Try to send a message 0:1:8.359375010 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 14 
+		 sender_id: 5 
+DEBUG (6): Try to send a message 0:1:8.359375010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 70 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:1:8.359375010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 35 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 683626708892 [s]
+		 Time from radio on: 68.362671 [s]
+		 Errors: 133 
+		 Error ratio: 1.945506 [errors/s]
+DEBUG (5): Packet sent... at time 0:1:8.362838734 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 683644714158 [s]
+		 Time from radio on: 68.364471 [s]
+		 Errors: 134 
+		 Error ratio: 1.960082 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:8.364639261 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 683698729956 [s]
+		 Time from radio on: 68.369873 [s]
+		 Errors: 135 
+		 Error ratio: 1.974554 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:8.370040841 
+DEBUG (6): Try to send a message 0:1:9.335937510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 71 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 693383789020 [s]
+		 Time from radio on: 69.338379 [s]
+		 Errors: 136 
+		 Error ratio: 1.961396 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:9.338546747 
+DEBUG (4): Try to send a message 0:1:10.312500010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 18 
+		 sender_id: 4 
+DEBUG (6): Try to send a message 0:1:10.312500010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 72 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:1:10.312500010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 24 
+		 sender_id: 3 
+DEBUG (2): Try to send a message 0:1:10.312500010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 36 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 703138732930 [s]
+		 Time from radio on: 70.313873 [s]
+		 Errors: 137 
+		 Error ratio: 1.948406 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:10.314041138 
+DEBUG (6): Packet sent... at time 0:1:10.320281947 
+DEBUG (4): Packet sent... at time 0:1:10.320739708 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 703230285130 [s]
+		 Time from radio on: 70.323029 [s]
+		 Errors: 138 
+		 Error ratio: 1.962373 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:10.323196358 
+DEBUG (6): Try to send a message 0:1:11.289062510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 73 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 712955779749 [s]
+		 Time from radio on: 71.295578 [s]
+		 Errors: 139 
+		 Error ratio: 1.949630 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:11.295745820 
+DEBUG (2): Try to send a message 0:1:12.265625010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 37 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:1:12.265625010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 74 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 722676238997 [s]
+		 Time from radio on: 72.267624 [s]
+		 Errors: 140 
+		 Error ratio: 1.937244 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:12.267791745 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 722683105412 [s]
+		 Time from radio on: 72.268311 [s]
+		 Errors: 141 
+		 Error ratio: 1.951063 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:12.268478386 
+DEBUG (6): Try to send a message 0:1:13.242187510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 75 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:1:13.242187510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 25 
+		 sender_id: 3 
+DEBUG (5): Try to send a message 0:1:13.242187510 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 15 
+		 sender_id: 5 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 732433166538 [s]
+		 Time from radio on: 73.243317 [s]
+		 Errors: 142 
+		 Error ratio: 1.938743 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:13.243484499 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 732488555619 [s]
+		 Time from radio on: 73.248856 [s]
+		 Errors: 143 
+		 Error ratio: 1.952249 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:13.249023407 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 732503203971 [s]
+		 Time from radio on: 73.250320 [s]
+		 Errors: 144 
+		 Error ratio: 1.965862 [errors/s]
+DEBUG (5): Packet sent... at time 0:1:13.250488242 
+DEBUG (2): Try to send a message 0:1:14.218750010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 38 
+		 sender_id: 2 
+DEBUG (4): Try to send a message 0:1:14.218750010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 19 
+		 sender_id: 4 
+DEBUG (6): Try to send a message 0:1:14.218750010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 76 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 742231292569 [s]
+		 Time from radio on: 74.223129 [s]
+		 Errors: 145 
+		 Error ratio: 1.953569 [errors/s]
+DEBUG (4): Packet sent... at time 0:1:14.223297102 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 742276916082 [s]
+		 Time from radio on: 74.227692 [s]
+		 Errors: 146 
+		 Error ratio: 1.966921 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:14.227859453 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 742283477323 [s]
+		 Time from radio on: 74.228348 [s]
+		 Errors: 147 
+		 Error ratio: 1.980376 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:14.228515578 
+DEBUG (6): Try to send a message 0:1:15.195312510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 77 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 752003631397 [s]
+		 Time from radio on: 75.200363 [s]
+		 Errors: 148 
+		 Error ratio: 1.968076 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:15.200530985 
+DEBUG (2): Try to send a message 0:1:16.171875010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 39 
+		 sender_id: 2 
+DEBUG (3): Try to send a message 0:1:16.171875010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 26 
+		 sender_id: 3 
+DEBUG (6): Try to send a message 0:1:16.171875010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 78 
+		 sender_id: 6 
+DEBUG (2): Packet sent... at time 0:1:16.177871679 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 761817626476 [s]
+		 Time from radio on: 76.181763 [s]
+		 Errors: 149 
+		 Error ratio: 1.955849 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:16.181930493 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 761836547264 [s]
+		 Time from radio on: 76.183655 [s]
+		 Errors: 150 
+		 Error ratio: 1.968926 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:16.183822572 
+DEBUG (6): Try to send a message 0:1:17.148437510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 79 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 771552276315 [s]
+		 Time from radio on: 77.155228 [s]
+		 Errors: 151 
+		 Error ratio: 1.957094 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:17.155395477 
+DEBUG (6): Try to send a message 0:1:18.125000010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 80 
+		 sender_id: 6 
+DEBUG (4): Try to send a message 0:1:18.125000010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 20 
+		 sender_id: 4 
+DEBUG (2): Try to send a message 0:1:18.125000010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 40 
+		 sender_id: 2 
+DEBUG (5): Try to send a message 0:1:18.125000010 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 16 
+		 sender_id: 5 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 781283264066 [s]
+		 Time from radio on: 78.128326 [s]
+		 Errors: 152 
+		 Error ratio: 1.945517 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:18.128494252 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 781289825307 [s]
+		 Time from radio on: 78.128983 [s]
+		 Errors: 153 
+		 Error ratio: 1.958300 [errors/s]
+DEBUG (4): Packet sent... at time 0:1:18.129150376 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 781319579772 [s]
+		 Time from radio on: 78.131958 [s]
+		 Errors: 154 
+		 Error ratio: 1.971025 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:18.132125822 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 781345366975 [s]
+		 Time from radio on: 78.134537 [s]
+		 Errors: 155 
+		 Error ratio: 1.983758 [errors/s]
+DEBUG (5): Packet sent... at time 0:1:18.134704543 
+DEBUG (6): Try to send a message 0:1:19.101562510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 81 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:1:19.101562510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 27 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 791038360563 [s]
+		 Time from radio on: 79.103836 [s]
+		 Errors: 156 
+		 Error ratio: 1.972091 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:19.104003902 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 791082000445 [s]
+		 Time from radio on: 79.108200 [s]
+		 Errors: 157 
+		 Error ratio: 1.984624 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:19.108367890 
+DEBUG (6): Try to send a message 0:1:20.078125010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 82 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:1:20.078125010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 41 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 800809783869 [s]
+		 Time from radio on: 80.080978 [s]
+		 Errors: 158 
+		 Error ratio: 1.973003 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:20.081146232 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 800886077369 [s]
+		 Time from radio on: 80.088608 [s]
+		 Errors: 159 
+		 Error ratio: 1.985301 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:20.088775582 
+DEBUG (6): Try to send a message 0:1:21.054687510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 83 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 810630340189 [s]
+		 Time from radio on: 81.063034 [s]
+		 Errors: 160 
+		 Error ratio: 1.973773 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:21.063201864 
+DEBUG (4): Try to send a message 0:1:22.031250010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 21 
+		 sender_id: 4 
+DEBUG (3): Try to send a message 0:1:22.031250010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 28 
+		 sender_id: 3 
+DEBUG (6): Try to send a message 0:1:22.031250010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 84 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:1:22.031250010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 42 
+		 sender_id: 2 
+DEBUG (3): Packet sent... at time 0:1:22.032775880 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 820347595110 [s]
+		 Time from radio on: 82.034760 [s]
+		 Errors: 161 
+		 Error ratio: 1.962583 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:22.034927356 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 820356292569 [s]
+		 Time from radio on: 82.035629 [s]
+		 Errors: 162 
+		 Error ratio: 1.974752 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:22.035797102 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 820374145248 [s]
+		 Time from radio on: 82.037415 [s]
+		 Errors: 163 
+		 Error ratio: 1.986898 [errors/s]
+DEBUG (4): Packet sent... at time 0:1:22.037582370 
+DEBUG (6): Try to send a message 0:1:23.007812510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 85 
+		 sender_id: 6 
+DEBUG (5): Try to send a message 0:1:23.007812510 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 17 
+		 sender_id: 5 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 830114135632 [s]
+		 Time from radio on: 83.011414 [s]
+		 Errors: 164 
+		 Error ratio: 1.975632 [errors/s]
+DEBUG (5): Packet sent... at time 0:1:23.011581408 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 830176391128 [s]
+		 Time from radio on: 83.017639 [s]
+		 Errors: 165 
+		 Error ratio: 1.987529 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:23.017806958 
+DEBUG (2): Try to send a message 0:1:23.984375010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 43 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:1:23.984375010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 86 
+		 sender_id: 6 
+DEBUG (2): Packet sent... at time 0:1:23.986618038 
+DEBUG (6): Packet sent... at time 0:1:23.986938471 
+DEBUG (6): Try to send a message 0:1:24.960937510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 87 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:1:24.960937510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 29 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 849661254680 [s]
+		 Time from radio on: 84.966125 [s]
+		 Errors: 166 
+		 Error ratio: 1.953720 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:24.966293313 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 849691466906 [s]
+		 Time from radio on: 84.969147 [s]
+		 Errors: 167 
+		 Error ratio: 1.965419 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:24.969314536 
+DEBUG (4): Try to send a message 0:1:25.937500010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 22 
+		 sender_id: 4 
+DEBUG (6): Try to send a message 0:1:25.937500010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 88 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:1:25.937500010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 44 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 859400482129 [s]
+		 Time from radio on: 85.940048 [s]
+		 Errors: 168 
+		 Error ratio: 1.954851 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:25.940216058 
+DEBUG (4): Packet sent... at time 0:1:25.941055287 
+DEBUG (2): Packet sent... at time 0:1:25.941116321 
+DEBUG (6): Try to send a message 0:1:26.914062510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 89 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 869178771850 [s]
+		 Time from radio on: 86.917877 [s]
+		 Errors: 169 
+		 Error ratio: 1.944364 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:26.918045030 
+DEBUG (6): Try to send a message 0:1:27.890625010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 90 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:1:27.890625010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 30 
+		 sender_id: 3 
+DEBUG (2): Try to send a message 0:1:27.890625010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 45 
+		 sender_id: 2 
+DEBUG (5): Try to send a message 0:1:27.890625010 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 18 
+		 sender_id: 5 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 878948974460 [s]
+		 Time from radio on: 87.894897 [s]
+		 Errors: 170 
+		 Error ratio: 1.934128 [errors/s]
+DEBUG (5): Packet sent... at time 0:1:27.895065291 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 878971557336 [s]
+		 Time from radio on: 87.897156 [s]
+		 Errors: 171 
+		 Error ratio: 1.945455 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:27.897323579 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 878984222057 [s]
+		 Time from radio on: 87.898422 [s]
+		 Errors: 172 
+		 Error ratio: 1.956804 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:27.898590051 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 878992461755 [s]
+		 Time from radio on: 87.899246 [s]
+		 Errors: 173 
+		 Error ratio: 1.968163 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:27.899414021 
+DEBUG (6): Try to send a message 0:1:28.867187510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 91 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 888752288449 [s]
+		 Time from radio on: 88.875229 [s]
+		 Errors: 174 
+		 Error ratio: 1.957801 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:28.875396690 
+DEBUG (4): Try to send a message 0:1:29.843750010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 23 
+		 sender_id: 4 
+DEBUG (6): Try to send a message 0:1:29.843750010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 92 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:1:29.843750010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 46 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 898457794171 [s]
+		 Time from radio on: 89.845779 [s]
+		 Errors: 175 
+		 Error ratio: 1.947782 [errors/s]
+DEBUG (4): Packet sent... at time 0:1:29.845947262 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 898526458321 [s]
+		 Time from radio on: 89.852646 [s]
+		 Errors: 176 
+		 Error ratio: 1.958763 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:29.852813677 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 898533629910 [s]
+		 Time from radio on: 89.853363 [s]
+		 Errors: 177 
+		 Error ratio: 1.969876 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:29.853530836 
+DEBUG (6): Try to send a message 0:1:30.820312510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 93 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:1:30.820312510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 31 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 908264159900 [s]
+		 Time from radio on: 90.826416 [s]
+		 Errors: 178 
+		 Error ratio: 1.959782 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:30.826583835 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 908302001476 [s]
+		 Time from radio on: 90.830200 [s]
+		 Errors: 179 
+		 Error ratio: 1.970710 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:30.830367993 
+DEBUG (2): Try to send a message 0:1:31.796875010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 47 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:1:31.796875010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 94 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 918025512464 [s]
+		 Time from radio on: 91.802551 [s]
+		 Errors: 180 
+		 Error ratio: 1.960730 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:31.802719092 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 918031921118 [s]
+		 Time from radio on: 91.803192 [s]
+		 Errors: 181 
+		 Error ratio: 1.971609 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:31.803359957 
+DEBUG (5): Try to send a message 0:1:32.773437510 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 19 
+		 sender_id: 5 
+DEBUG (6): Try to send a message 0:1:32.773437510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 95 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 927788848659 [s]
+		 Time from radio on: 92.778885 [s]
+		 Errors: 182 
+		 Error ratio: 1.961653 [errors/s]
+DEBUG (5): Packet sent... at time 0:1:32.779052711 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 927811889296 [s]
+		 Time from radio on: 92.781189 [s]
+		 Errors: 183 
+		 Error ratio: 1.972383 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:32.781356775 
+DEBUG (4): Try to send a message 0:1:33.750000010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 24 
+		 sender_id: 4 
+DEBUG (3): Try to send a message 0:1:33.750000010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 32 
+		 sender_id: 3 
+DEBUG (6): Try to send a message 0:1:33.750000010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 96 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:1:33.750000010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 48 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 937521667454 [s]
+		 Time from radio on: 93.752167 [s]
+		 Errors: 184 
+		 Error ratio: 1.962621 [errors/s]
+DEBUG (4): Packet sent... at time 0:1:33.752334591 
+DEBUG (6): Packet sent... at time 0:1:33.755950903 
+DEBUG (2): Packet sent... at time 0:1:33.756393405 
+DEBUG (3): Packet sent... at time 0:1:33.758926349 
+DEBUG (6): Try to send a message 0:1:34.726562510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 97 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 947333831489 [s]
+		 Time from radio on: 94.733383 [s]
+		 Errors: 185 
+		 Error ratio: 1.952849 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:34.733550994 
+DEBUG (6): Try to send a message 0:1:35.703125010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 98 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:1:35.703125010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 49 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 957076110678 [s]
+		 Time from radio on: 95.707611 [s]
+		 Errors: 186 
+		 Error ratio: 1.943419 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:35.707778913 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 957097167684 [s]
+		 Time from radio on: 95.709717 [s]
+		 Errors: 187 
+		 Error ratio: 1.953825 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:35.709884614 
+DEBUG (6): Try to send a message 0:1:36.679687510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 99 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:1:36.679687510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 33 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 966826934739 [s]
+		 Time from radio on: 96.682693 [s]
+		 Errors: 188 
+		 Error ratio: 1.944505 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:36.682861319 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 966841735678 [s]
+		 Time from radio on: 96.684174 [s]
+		 Errors: 189 
+		 Error ratio: 1.954818 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:36.684341413 
+DEBUG (6): Try to send a message 0:1:37.656250010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 100 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:1:37.656250010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 50 
+		 sender_id: 2 
+DEBUG (4): Try to send a message 0:1:37.656250010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 25 
+		 sender_id: 4 
+DEBUG (5): Try to send a message 0:1:37.656250010 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 20 
+		 sender_id: 5 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 976591339043 [s]
+		 Time from radio on: 97.659134 [s]
+		 Errors: 190 
+		 Error ratio: 1.945543 [errors/s]
+DEBUG (4): Packet sent... at time 0:1:37.659301750 
+DEBUG (5): Packet sent... at time 0:1:37.660873396 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 976641234992 [s]
+		 Time from radio on: 97.664123 [s]
+		 Errors: 191 
+		 Error ratio: 1.955682 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:37.664291344 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 976653747126 [s]
+		 Time from radio on: 97.665375 [s]
+		 Errors: 192 
+		 Error ratio: 1.965896 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:37.665542558 
+DEBUG (6): Try to send a message 0:1:38.632812510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 101 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 986352691607 [s]
+		 Time from radio on: 98.635269 [s]
+		 Errors: 193 
+		 Error ratio: 1.956704 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:38.635437006 
+DEBUG (6): Try to send a message 0:1:39.609375010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 102 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:1:39.609375010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 34 
+		 sender_id: 3 
+DEBUG (2): Try to send a message 0:1:39.609375010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 51 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 996166991860 [s]
+		 Time from radio on: 99.616699 [s]
+		 Errors: 194 
+		 Error ratio: 1.947465 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:39.616867031 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 996175231558 [s]
+		 Time from radio on: 99.617523 [s]
+		 Errors: 195 
+		 Error ratio: 1.957487 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:39.617691001 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 996183318669 [s]
+		 Time from radio on: 99.618332 [s]
+		 Errors: 196 
+		 Error ratio: 1.967509 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:39.618499712 
+DEBUG (6): Try to send a message 0:1:40.585937510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 103 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1005899200307 [s]
+		 Time from radio on: 100.589920 [s]
+		 Errors: 197 
+		 Error ratio: 1.958447 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:40.590087876 
+DEBUG (4): Try to send a message 0:1:41.562500010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 26 
+		 sender_id: 4 
+DEBUG (2): Try to send a message 0:1:41.562500010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 52 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:1:41.562500010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 104 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1015683593508 [s]
+		 Time from radio on: 101.568359 [s]
+		 Errors: 198 
+		 Error ratio: 1.949426 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:41.568527196 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1015692901315 [s]
+		 Time from radio on: 101.569290 [s]
+		 Errors: 199 
+		 Error ratio: 1.959254 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:41.569457977 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1015709380711 [s]
+		 Time from radio on: 101.570938 [s]
+		 Errors: 200 
+		 Error ratio: 1.969067 [errors/s]
+DEBUG (4): Packet sent... at time 0:1:41.571105916 
+DEBUG (5): Try to send a message 0:1:42.539062510 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 21 
+		 sender_id: 5 
+DEBUG (3): Try to send a message 0:1:42.539062510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 35 
+		 sender_id: 3 
+DEBUG (6): Try to send a message 0:1:42.539062510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 105 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1025440826223 [s]
+		 Time from radio on: 102.544083 [s]
+		 Errors: 201 
+		 Error ratio: 1.960133 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:42.544250468 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1025451659900 [s]
+		 Time from radio on: 102.545166 [s]
+		 Errors: 202 
+		 Error ratio: 1.969864 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:42.545333835 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1025471343623 [s]
+		 Time from radio on: 102.547134 [s]
+		 Errors: 203 
+		 Error ratio: 1.979578 [errors/s]
+DEBUG (5): Packet sent... at time 0:1:42.547302208 
+DEBUG (2): Try to send a message 0:1:43.515625010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 53 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:1:43.515625010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 106 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1035191497697 [s]
+		 Time from radio on: 103.519150 [s]
+		 Errors: 204 
+		 Error ratio: 1.970650 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:43.519317615 
+DEBUG (2): Packet sent... at time 0:1:43.524902299 
+DEBUG (6): Try to send a message 0:1:44.492187510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 107 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1045007323820 [s]
+		 Time from radio on: 104.500732 [s]
+		 Errors: 205 
+		 Error ratio: 1.961709 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:44.500900227 
+DEBUG (2): Try to send a message 0:1:45.468750010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 54 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:1:45.468750010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 108 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:1:45.468750010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 36 
+		 sender_id: 3 
+DEBUG (4): Try to send a message 0:1:45.468750010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 27 
+		 sender_id: 4 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1054718933022 [s]
+		 Time from radio on: 105.471893 [s]
+		 Errors: 206 
+		 Error ratio: 1.953127 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:45.472061147 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1054740600376 [s]
+		 Time from radio on: 105.474060 [s]
+		 Errors: 207 
+		 Error ratio: 1.962568 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:45.474227883 
+DEBUG (4): Packet sent... at time 0:1:45.475921599 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1054791411847 [s]
+		 Time from radio on: 105.479141 [s]
+		 Errors: 208 
+		 Error ratio: 1.971954 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:45.479309030 
+DEBUG (6): Try to send a message 0:1:46.445312510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 109 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1064523467707 [s]
+		 Time from radio on: 106.452347 [s]
+		 Errors: 209 
+		 Error ratio: 1.963320 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:46.452514616 
+DEBUG (2): Try to send a message 0:1:47.421875010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 55 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:1:47.421875010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 110 
+		 sender_id: 6 
+DEBUG (5): Try to send a message 0:1:47.421875010 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 22 
+		 sender_id: 5 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1074291076338 [s]
+		 Time from radio on: 107.429108 [s]
+		 Errors: 210 
+		 Error ratio: 1.954777 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:47.429275479 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1074303435885 [s]
+		 Time from radio on: 107.430344 [s]
+		 Errors: 211 
+		 Error ratio: 1.964063 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:47.430511434 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1074314879910 [s]
+		 Time from radio on: 107.431488 [s]
+		 Errors: 212 
+		 Error ratio: 1.973351 [errors/s]
+DEBUG (5): Packet sent... at time 0:1:47.431655836 
+DEBUG (6): Try to send a message 0:1:48.398437510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 111 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:1:48.398437510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 37 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1084040527116 [s]
+		 Time from radio on: 108.404053 [s]
+		 Errors: 213 
+		 Error ratio: 1.964871 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:48.404220557 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1084086303216 [s]
+		 Time from radio on: 108.408630 [s]
+		 Errors: 214 
+		 Error ratio: 1.974013 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:48.408798167 
+DEBUG (4): Try to send a message 0:1:49.375000010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 28 
+		 sender_id: 4 
+DEBUG (6): Try to send a message 0:1:49.375000010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 112 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:1:49.375000010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 56 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1093765106213 [s]
+		 Time from radio on: 109.376511 [s]
+		 Errors: 215 
+		 Error ratio: 1.965687 [errors/s]
+DEBUG (4): Packet sent... at time 0:1:49.376678467 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1093793182221 [s]
+		 Time from radio on: 109.379318 [s]
+		 Errors: 216 
+		 Error ratio: 1.974779 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:49.379486067 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1093799743462 [s]
+		 Time from radio on: 109.379974 [s]
+		 Errors: 217 
+		 Error ratio: 1.983910 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:49.380142191 
+DEBUG (6): Try to send a message 0:1:50.351562510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 113 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1103600921233 [s]
+		 Time from radio on: 110.360092 [s]
+		 Errors: 218 
+		 Error ratio: 1.975352 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:50.360259969 
+DEBUG (2): Try to send a message 0:1:51.328125010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 57 
+		 sender_id: 2 
+DEBUG (3): Try to send a message 0:1:51.328125010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 38 
+		 sender_id: 3 
+DEBUG (6): Try to send a message 0:1:51.328125010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 114 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1113341064204 [s]
+		 Time from radio on: 111.334106 [s]
+		 Errors: 219 
+		 Error ratio: 1.967052 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:51.334274266 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1113359832405 [s]
+		 Time from radio on: 111.335983 [s]
+		 Errors: 220 
+		 Error ratio: 1.976001 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:51.336151086 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1113384398912 [s]
+		 Time from radio on: 111.338440 [s]
+		 Errors: 221 
+		 Error ratio: 1.984939 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:51.338607736 
+DEBUG (5): Try to send a message 0:1:52.304687510 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 23 
+		 sender_id: 5 
+DEBUG (6): Try to send a message 0:1:52.304687510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 115 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1123093566722 [s]
+		 Time from radio on: 112.309357 [s]
+		 Errors: 222 
+		 Error ratio: 1.976683 [errors/s]
+DEBUG (5): Packet sent... at time 0:1:52.309524517 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1123112334923 [s]
+		 Time from radio on: 112.311233 [s]
+		 Errors: 223 
+		 Error ratio: 1.985554 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:52.311401338 
+DEBUG (4): Try to send a message 0:1:53.281250010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 29 
+		 sender_id: 4 
+DEBUG (6): Try to send a message 0:1:53.281250010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 116 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:1:53.281250010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 58 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1132825622582 [s]
+		 Time from radio on: 113.282562 [s]
+		 Errors: 224 
+		 Error ratio: 1.977356 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:53.282730103 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1132831878649 [s]
+		 Time from radio on: 113.283188 [s]
+		 Errors: 225 
+		 Error ratio: 1.986173 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:53.283355710 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1132866210724 [s]
+		 Time from radio on: 113.286621 [s]
+		 Errors: 226 
+		 Error ratio: 1.994940 [errors/s]
+DEBUG (4): Packet sent... at time 0:1:53.286788918 
+DEBUG (6): Try to send a message 0:1:54.257812510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 117 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:1:54.257812510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 39 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1142600555389 [s]
+		 Time from radio on: 114.260056 [s]
+		 Errors: 227 
+		 Error ratio: 1.986696 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:54.260223384 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1142641753879 [s]
+		 Time from radio on: 114.264175 [s]
+		 Errors: 228 
+		 Error ratio: 1.995376 [errors/s]
+DEBUG (3): Packet sent... at time 0:1:54.264343233 
+DEBUG (6): Try to send a message 0:1:55.234375010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 118 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:1:55.234375010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 59 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1152395629680 [s]
+		 Time from radio on: 115.239563 [s]
+		 Errors: 229 
+		 Error ratio: 1.987165 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:55.239730813 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1152424163449 [s]
+		 Time from radio on: 115.242416 [s]
+		 Errors: 230 
+		 Error ratio: 1.995793 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:55.242584190 
+DEBUG (6): Try to send a message 0:1:56.210937510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 119 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1162160949506 [s]
+		 Time from radio on: 116.216095 [s]
+		 Errors: 231 
+		 Error ratio: 1.987677 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:56.216262796 
+DEBUG (2): Try to send a message 0:1:57.187500010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 60 
+		 sender_id: 2 
+DEBUG (3): Try to send a message 0:1:57.187500010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 40 
+		 sender_id: 3 
+DEBUG (6): Try to send a message 0:1:57.187500010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 120 
+		 sender_id: 6 
+DEBUG (5): Try to send a message 0:1:57.187500010 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 24 
+		 sender_id: 5 
+DEBUG (4): Try to send a message 0:1:57.187500010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 30 
+		 sender_id: 4 
+DEBUG (5): Packet sent... at time 0:1:57.189910884 
+DEBUG (3): Packet sent... at time 0:1:57.189926143 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1171910705458 [s]
+		 Time from radio on: 117.191071 [s]
+		 Errors: 232 
+		 Error ratio: 1.979673 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:57.191238391 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1171929168485 [s]
+		 Time from radio on: 117.192917 [s]
+		 Errors: 233 
+		 Error ratio: 1.988175 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:57.193084694 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1171958617776 [s]
+		 Time from radio on: 117.195862 [s]
+		 Errors: 234 
+		 Error ratio: 1.996657 [errors/s]
+DEBUG (4): Packet sent... at time 0:1:57.196029623 
+DEBUG (6): Try to send a message 0:1:58.164062510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 121 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1181683959808 [s]
+		 Time from radio on: 118.168396 [s]
+		 Errors: 235 
+		 Error ratio: 1.988687 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:58.168563826 
+DEBUG (2): Try to send a message 0:1:59.140625010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 61 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:1:59.140625010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 122 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1191417388951 [s]
+		 Time from radio on: 119.141739 [s]
+		 Errors: 236 
+		 Error ratio: 1.980834 [errors/s]
+DEBUG (6): Packet sent... at time 0:1:59.141906740 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1191470641814 [s]
+		 Time from radio on: 119.147064 [s]
+		 Errors: 237 
+		 Error ratio: 1.989138 [errors/s]
+DEBUG (2): Packet sent... at time 0:1:59.147232027 
+DEBUG (6): Try to send a message 0:2:0.117187510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 123 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:2:0.117187510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 41 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1201213073590 [s]
+		 Time from radio on: 120.121307 [s]
+		 Errors: 238 
+		 Error ratio: 1.981330 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:0.121475204 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1201243743577 [s]
+		 Time from radio on: 120.124374 [s]
+		 Errors: 239 
+		 Error ratio: 1.989605 [errors/s]
+DEBUG (3): Packet sent... at time 0:2:0.124542203 
+DEBUG (6): Try to send a message 0:2:1.093750010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 124 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:2:1.093750010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 62 
+		 sender_id: 2 
+DEBUG (4): Try to send a message 0:2:1.093750010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 31 
+		 sender_id: 4 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1210980224460 [s]
+		 Time from radio on: 121.098022 [s]
+		 Errors: 240 
+		 Error ratio: 1.981866 [errors/s]
+DEBUG (4): Packet sent... at time 0:2:1.098190291 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1210993957290 [s]
+		 Time from radio on: 121.099396 [s]
+		 Errors: 241 
+		 Error ratio: 1.990101 [errors/s]
+DEBUG (2): Packet sent... at time 0:2:1.099563574 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1211007995294 [s]
+		 Time from radio on: 121.100800 [s]
+		 Errors: 242 
+		 Error ratio: 1.998335 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:1.100967375 
+DEBUG (5): Try to send a message 0:2:2.070312510 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 25 
+		 sender_id: 5 
+DEBUG (6): Try to send a message 0:2:2.070312510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 125 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1220773162533 [s]
+		 Time from radio on: 122.077316 [s]
+		 Errors: 243 
+		 Error ratio: 1.990542 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:2.077484099 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1220798491975 [s]
+		 Time from radio on: 122.079849 [s]
+		 Errors: 244 
+		 Error ratio: 1.998692 [errors/s]
+DEBUG (5): Packet sent... at time 0:2:2.080017043 
+DEBUG (2): Try to send a message 0:2:3.046875010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 63 
+		 sender_id: 2 
+DEBUG (3): Try to send a message 0:2:3.046875010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 42 
+		 sender_id: 3 
+DEBUG (6): Try to send a message 0:2:3.046875010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 126 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1230481109647 [s]
+		 Time from radio on: 123.048111 [s]
+		 Errors: 245 
+		 Error ratio: 1.991091 [errors/s]
+DEBUG (2): Packet sent... at time 0:2:3.048278810 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1230513763265 [s]
+		 Time from radio on: 123.051376 [s]
+		 Errors: 246 
+		 Error ratio: 1.999165 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:3.051544172 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1230567931650 [s]
+		 Time from radio on: 123.056793 [s]
+		 Errors: 247 
+		 Error ratio: 2.007203 [errors/s]
+DEBUG (3): Packet sent... at time 0:2:3.056961010 
+DEBUG (6): Try to send a message 0:2:4.023437510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 127 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1240311736709 [s]
+		 Time from radio on: 124.031174 [s]
+		 Errors: 248 
+		 Error ratio: 1.999497 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:4.031341516 
+DEBUG (4): Try to send a message 0:2:5.000000010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 32 
+		 sender_id: 4 
+DEBUG (6): Try to send a message 0:2:5.000000010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 128 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:2:5.000000010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 64 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1250035247697 [s]
+		 Time from radio on: 125.003525 [s]
+		 Errors: 249 
+		 Error ratio: 1.991944 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:5.003692615 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1250052947789 [s]
+		 Time from radio on: 125.005295 [s]
+		 Errors: 250 
+		 Error ratio: 1.999915 [errors/s]
+DEBUG (2): Packet sent... at time 0:2:5.005462624 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1250063628879 [s]
+		 Time from radio on: 125.006363 [s]
+		 Errors: 251 
+		 Error ratio: 2.007898 [errors/s]
+DEBUG (4): Packet sent... at time 0:2:5.006530733 
+DEBUG (6): Try to send a message 0:2:5.976562510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 129 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:2:5.976562510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 43 
+		 sender_id: 3 
+DEBUG (3): Packet sent... at time 0:2:5.978790280 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1259825439204 [s]
+		 Time from radio on: 125.982544 [s]
+		 Errors: 252 
+		 Error ratio: 2.000277 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:5.982711766 
+DEBUG (5): Try to send a message 0:2:6.953125010 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 26 
+		 sender_id: 5 
+DEBUG (6): Try to send a message 0:2:6.953125010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 130 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:2:6.953125010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 65 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1269545745865 [s]
+		 Time from radio on: 126.954575 [s]
+		 Errors: 253 
+		 Error ratio: 1.992839 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:6.954742432 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1269607391013 [s]
+		 Time from radio on: 126.960739 [s]
+		 Errors: 254 
+		 Error ratio: 2.000618 [errors/s]
+DEBUG (2): Packet sent... at time 0:2:6.960906947 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1269617766929 [s]
+		 Time from radio on: 126.961777 [s]
+		 Errors: 255 
+		 Error ratio: 2.008478 [errors/s]
+DEBUG (5): Packet sent... at time 0:2:6.961944538 
+DEBUG (6): Try to send a message 0:2:7.929687510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 131 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1279362029749 [s]
+		 Time from radio on: 127.936203 [s]
+		 Errors: 0 
+		 Error ratio: 2.000997 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:7.936370820 
+DEBUG (6): Try to send a message 0:2:8.906250010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 132 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:2:8.906250010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 44 
+		 sender_id: 3 
+DEBUG (4): Try to send a message 0:2:8.906250010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 33 
+		 sender_id: 4 
+DEBUG (2): Try to send a message 0:2:8.906250010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 66 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1289101562372 [s]
+		 Time from radio on: 128.910156 [s]
+		 Errors: 1 
+		 Error ratio: 1.993637 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:8.910324082 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1289111175353 [s]
+		 Time from radio on: 128.911118 [s]
+		 Errors: 2 
+		 Error ratio: 2.001379 [errors/s]
+DEBUG (3): Packet sent... at time 0:2:8.911285381 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1289138335839 [s]
+		 Time from radio on: 128.913834 [s]
+		 Errors: 3 
+		 Error ratio: 2.009094 [errors/s]
+DEBUG (4): Packet sent... at time 0:2:8.914001429 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1289166411847 [s]
+		 Time from radio on: 128.916641 [s]
+		 Errors: 4 
+		 Error ratio: 2.016807 [errors/s]
+DEBUG (2): Packet sent... at time 0:2:8.916809030 
+DEBUG (6): Try to send a message 0:2:9.882812510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 133 
+		 sender_id: 6 
+DEBUG (6): Packet sent... at time 0:2:9.885543817 
+DEBUG (2): Try to send a message 0:2:10.859375010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 67 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:2:10.859375010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 134 
+		 sender_id: 6 
+DEBUG (6): Packet sent... at time 0:2:10.862411491 
+DEBUG (2): Packet sent... at time 0:2:10.862915028 
+DEBUG (5): Try to send a message 0:2:11.835937510 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 27 
+		 sender_id: 5 
+DEBUG (3): Try to send a message 0:2:11.835937510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 45 
+		 sender_id: 3 
+DEBUG (6): Try to send a message 0:2:11.835937510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 135 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1318379516584 [s]
+		 Time from radio on: 131.837952 [s]
+		 Errors: 5 
+		 Error ratio: 1.979703 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:11.838119504 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1318396758915 [s]
+		 Time from radio on: 131.839676 [s]
+		 Errors: 6 
+		 Error ratio: 1.987262 [errors/s]
+DEBUG (5): Packet sent... at time 0:2:11.839843737 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1318457641128 [s]
+		 Time from radio on: 131.845764 [s]
+		 Errors: 7 
+		 Error ratio: 1.994755 [errors/s]
+DEBUG (3): Packet sent... at time 0:2:11.845931958 
+DEBUG (4): Try to send a message 0:2:12.812500010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 34 
+		 sender_id: 4 
+DEBUG (6): Try to send a message 0:2:12.812500010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 136 
+		 sender_id: 6 
+DEBUG (2): Try to send a message 0:2:12.812500010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 68 
+		 sender_id: 2 
+DEBUG (4): Packet sent... at time 0:2:12.815505973 
+DEBUG (6): Packet sent... at time 0:2:12.815872182 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1328203582405 [s]
+		 Time from radio on: 132.820358 [s]
+		 Errors: 8 
+		 Error ratio: 1.987647 [errors/s]
+DEBUG (2): Packet sent... at time 0:2:12.820526086 
+DEBUG (6): Try to send a message 0:2:13.789062510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 137 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1337903594995 [s]
+		 Time from radio on: 133.790359 [s]
+		 Errors: 9 
+		 Error ratio: 1.980711 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:13.790527345 
+DEBUG (6): Try to send a message 0:2:14.765625010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 138 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:2:14.765625010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 46 
+		 sender_id: 3 
+DEBUG (2): Try to send a message 0:2:14.765625010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 69 
+		 sender_id: 2 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1347680511433 [s]
+		 Time from radio on: 134.768051 [s]
+		 Errors: 10 
+		 Error ratio: 1.973762 [errors/s]
+DEBUG (3): Packet sent... at time 0:2:14.768218989 
+DEBUG (6): Packet sent... at time 0:2:14.772170992 
+DEBUG (2): Packet sent... at time 0:2:14.772354096 
+DEBUG (6): Try to send a message 0:2:15.742187510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 139 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1357433929473 [s]
+		 Time from radio on: 135.743393 [s]
+		 Errors: 11 
+		 Error ratio: 1.966947 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:15.743560793 
+DEBUG (6): Try to send a message 0:2:16.718750010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 140 
+		 sender_id: 6 
+DEBUG (4): Try to send a message 0:2:16.718750010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 35 
+		 sender_id: 4 
+DEBUG (2): Try to send a message 0:2:16.718750010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 70 
+		 sender_id: 2 
+DEBUG (5): Try to send a message 0:2:16.718750010 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 28 
+		 sender_id: 5 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1367226867546 [s]
+		 Time from radio on: 136.722687 [s]
+		 Errors: 12 
+		 Error ratio: 1.960172 [errors/s]
+DEBUG (4): Packet sent... at time 0:2:16.722854600 
+DEBUG (2): Packet sent... at time 0:2:16.723831157 
+DEBUG (5): Packet sent... at time 0:2:16.724151589 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1367280425583 [s]
+		 Time from radio on: 136.728043 [s]
+		 Errors: 13 
+		 Error ratio: 1.967409 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:16.728210404 
+DEBUG (6): Try to send a message 0:2:17.695312510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 141 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:2:17.695312510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 47 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1376985320957 [s]
+		 Time from radio on: 137.698532 [s]
+		 Errors: 14 
+		 Error ratio: 1.960805 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:17.698699941 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1377008666768 [s]
+		 Time from radio on: 137.700867 [s]
+		 Errors: 15 
+		 Error ratio: 1.968034 [errors/s]
+DEBUG (3): Packet sent... at time 0:2:17.701034522 
+DEBUG (2): Try to send a message 0:2:18.671875010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 71 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:2:18.671875010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 142 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1386744232129 [s]
+		 Time from radio on: 138.674423 [s]
+		 Errors: 16 
+		 Error ratio: 1.961429 [errors/s]
+DEBUG (2): Packet sent... at time 0:2:18.674591058 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1386821135977 [s]
+		 Time from radio on: 138.682114 [s]
+		 Errors: 17 
+		 Error ratio: 1.968531 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:18.682281443 
+DEBUG (6): Try to send a message 0:2:19.648437510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 143 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1396511382999 [s]
+		 Time from radio on: 139.651138 [s]
+		 Errors: 18 
+		 Error ratio: 1.962032 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:19.651306145 
+DEBUG (4): Try to send a message 0:2:20.625000010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 36 
+		 sender_id: 4 
+DEBUG (2): Try to send a message 0:2:20.625000010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 72 
+		 sender_id: 2 
+DEBUG (3): Try to send a message 0:2:20.625000010 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 48 
+		 sender_id: 3 
+DEBUG (6): Try to send a message 0:2:20.625000010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 144 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1406292419286 [s]
+		 Time from radio on: 140.629242 [s]
+		 Errors: 19 
+		 Error ratio: 1.955497 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:20.629409774 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1406312560770 [s]
+		 Time from radio on: 140.631256 [s]
+		 Errors: 20 
+		 Error ratio: 1.962579 [errors/s]
+DEBUG (3): Packet sent... at time 0:2:20.631423922 
+DEBUG (2): Packet sent... at time 0:2:20.634475662 
+DEBUG (4): Packet sent... at time 0:2:20.634536697 
+DEBUG (5): Try to send a message 0:2:21.601562510 
+DEBUG (5): Packet passed to lower layer successfully!
+DEBUG (5): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 29 
+		 sender_id: 5 
+DEBUG (6): Try to send a message 0:2:21.601562510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 145 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1416028137234 [s]
+		 Time from radio on: 141.602814 [s]
+		 Errors: 21 
+		 Error ratio: 1.956176 [errors/s]
+DEBUG (5): Packet sent... at time 0:2:21.602981569 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1416042480412 [s]
+		 Time from radio on: 141.604248 [s]
+		 Errors: 22 
+		 Error ratio: 1.963218 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:21.604415886 
+DEBUG (2): Try to send a message 0:2:22.578125010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 73 
+		 sender_id: 2 
+DEBUG (6): Try to send a message 0:2:22.578125010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 146 
+		 sender_id: 6 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1425794982930 [s]
+		 Time from radio on: 142.579498 [s]
+		 Errors: 23 
+		 Error ratio: 1.956803 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:22.579666138 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1425852965990 [s]
+		 Time from radio on: 142.585297 [s]
+		 Errors: 24 
+		 Error ratio: 1.963737 [errors/s]
+DEBUG (2): Packet sent... at time 0:2:22.585464444 
+DEBUG (6): Try to send a message 0:2:23.554687510 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 147 
+		 sender_id: 6 
+DEBUG (3): Try to send a message 0:2:23.554687510 
+DEBUG (3): Packet passed to lower layer successfully!
+DEBUG (3): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 49 
+		 sender_id: 3 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1435564422605 [s]
+		 Time from radio on: 143.556442 [s]
+		 Errors: 25 
+		 Error ratio: 1.957418 [errors/s]
+DEBUG (3): Packet sent... at time 0:2:23.556610106 
+ERROR (1): Error receiving a packet!
+		 Time from radio on: 1435577850261 [s]
+		 Time from radio on: 143.557785 [s]
+		 Errors: 26 
+		 Error ratio: 1.964366 [errors/s]
+DEBUG (6): Packet sent... at time 0:2:23.557952871 
+DEBUG (6): Try to send a message 0:2:24.531250010 
+DEBUG (6): Packet passed to lower layer successfully!
+DEBUG (6): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 148 
+		 sender_id: 6 
+DEBUG (4): Try to send a message 0:2:24.531250010 
+DEBUG (4): Packet passed to lower layer successfully!
+DEBUG (4): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 37 
+		 sender_id: 4 
+DEBUG (2): Try to send a message 0:2:24.531250010 
+DEBUG (2): Packet passed to lower layer successfully!
+DEBUG (2): >>>Pack
+ 	 Payload length 5 
+		 Payload 
+		 msg_type: 1 
+ 		 msg_id: 74 
+		 sender_id: 2 
+
+
+
+Simulation finished!
