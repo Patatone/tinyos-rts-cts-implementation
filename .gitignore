@@ -3,3 +3,6 @@ DATA/
 simbuild/
 
 app.xml
+TOSSIM.py
+_TOSSIMmodule.so
+TOSSIM.pyc

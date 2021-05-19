@@ -29,26 +29,27 @@ module RtsCtsC {
 	void sendReq() {
 		if (locked) {
 			dbgerror("radio_send","Error during sendReq, channel is locked!\n");
-      		return;
-      	}
-		my_msg_t* mess = (my_msg_t*)(call Packet.getPayload(&packet,sizeof(my_msg_t)));
-		if (mess == NULL) {
-			dbgerror("radio_send","Error during sendReq, mess is NULL!\n");
 			return;
-      	}
-		mess->sender_id = TOS_NODE_ID;
-		mess->msg_type = REQ;
-		mess->msg_id = ++msg_id;
+		} else {
+			my_msg_t* mess=(my_msg_t*)(call Packet.getPayload(&packet,sizeof(my_msg_t)));
+			if (mess == NULL) {
+				dbgerror("radio_send","Error during sendReq, mess is NULL!\n");
+				return;
+			}
+			mess->sender_id = TOS_NODE_ID;
+			mess->msg_type = REQ;
+			mess->msg_id = ++msg_id;
 
-		dbg("radio_send", "Try to send a message %s \n", sim_time_string());
-		if(call AMSend.send(1,&packet,sizeof(my_msg_t)) == SUCCESS) {
-			locked = TRUE;
-			dbg("radio_send", "Packet passed to lower layer successfully!\n");
-			dbg("radio_pack",">>>Pack\n \t Payload length %hhu \n", call Packet.payloadLength(&packet) );
-			dbg_clear("radio_pack","\t\t Payload \n" );
-			dbg_clear("radio_pack", "\t\t msg_type: %hhu \n ", mess->msg_type);
-			dbg_clear("radio_pack", "\t\t msg_id: %hhu \n", mess->msg_id);
-			dbg_clear("radio_pack", "\t\t sender_id: %hhu \n", mess->sender_id);
+			dbg("radio_send", "Try to send a message %s \n", sim_time_string());
+			if(call AMSend.send(1,&packet,sizeof(my_msg_t)) == SUCCESS) {
+				locked = TRUE;
+				dbg("radio_send", "Packet passed to lower layer successfully!\n");
+				dbg("radio_pack",">>>Pack\n \t Payload length %hhu \n", call Packet.payloadLength(&packet) );
+				dbg_clear("radio_pack","\t\t Payload \n" );
+				dbg_clear("radio_pack", "\t\t msg_type: %hhu \n ", mess->msg_type);
+				dbg_clear("radio_pack", "\t\t msg_id: %hhu \n", mess->msg_id);
+				dbg_clear("radio_pack", "\t\t sender_id: %hhu \n", mess->sender_id);
+			}
 		}
 	}
 
@@ -90,9 +91,7 @@ module RtsCtsC {
 		}
 	}
 
-	event void SplitControl.stopDone(error_t err){
-		dbg("radio","Radio off!\n");
-	}
+	event void SplitControl.stopDone(error_t err){}
 
   //***************** MilliTimerN interfaces ********************//
 	event void MilliTimer2.fired() {
@@ -131,19 +130,21 @@ module RtsCtsC {
 		if (len != sizeof(message_t)) {
 			dbgerror("radio_rec","Error receiving a packet!\n");
 			return buf;
-		}
-		my_msg_t* mess = (my_msg_t*)payload;
+		} else {
+			my_msg_t* mess = (my_msg_t*)payload;
 
-		dbg("radio_rec","Message received at time %s \n", sim_time_string());
-		dbg("radio_pack",">>>Pack \n \t Payload length %hhu \n", call Packet.payloadLength( buf ) );
-		dbg_clear("radio_pack","\t\t Payload \n" );
-		dbg_clear("radio_pack", "\t\t msg_type: %hhu \n", mess->msg_type);
-		dbg_clear("radio_pack", "\t\t msg_id: %hhu \n", mess->msg_id);
-		dbg_clear("radio_pack", "\t\t sender_id: %hhu \n", mess->sender_id);
+			dbg("radio_rec","Message received at time %s \n", sim_time_string());
+			dbg("radio_pack",">>>Pack \n \t Payload length %hhu \n", call Packet.payloadLength( buf ) );
+			dbg_clear("radio_pack","\t\t Payload \n" );
+			dbg_clear("radio_pack", "\t\t msg_type: %hhu \n", mess->msg_type);
+			dbg_clear("radio_pack", "\t\t msg_id: %hhu \n", mess->msg_id);
+			dbg_clear("radio_pack", "\t\t sender_id: %hhu \n", mess->sender_id);
 
 /*		if (mess->msg_type == REQ) {
 			sendResp();
 		}*/
-		return buf;
+			return buf;
+		}
 	}
+
 }
