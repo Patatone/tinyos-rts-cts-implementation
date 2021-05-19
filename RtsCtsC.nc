@@ -18,6 +18,7 @@ module RtsCtsC {
 
 } implementation {
 
+	typedef long long int sim_time_t;
 	bool locked;
 	uint16_t msg_id = 0;
 	uint16_t error_count = 0;
@@ -131,7 +132,7 @@ module RtsCtsC {
 		if (len != sizeof(message_t)) {
 			dbgerror("radio_rec","Error receiving a packet!\n");
 			++error_count;
-			long long int alctual_time = sim_time();
+			sim_time_t alctual_time = sim_time();
 			dbg_clear("radio_rec", "error ratio at time %lld \n", alctual_time);
 			double ratio = error_count / alctual_time;
 			dbg_clear("radio_rec", "error ratio: %lf \n", ratio);
