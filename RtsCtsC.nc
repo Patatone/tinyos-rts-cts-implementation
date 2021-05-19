@@ -20,6 +20,7 @@ module RtsCtsC {
 
 	bool locked;
 	uint16_t msg_id = 0;
+	uint16_t error_count = 0;
 	message_t packet;
 
 	void sendReq();
@@ -67,7 +68,7 @@ module RtsCtsC {
   //***************** SplitControl interface ********************//
 	event void SplitControl.startDone(error_t err){
 		if(err == SUCCESS) {
-			dbg("radio","Radio on!\n");
+			dbg("radio","Radio on at time %lld \n", sim_time());
 			switch (TOS_NODE_ID) {
 				case 2:
 				call MilliTimer2.startPeriodic(2000);
@@ -129,6 +130,11 @@ module RtsCtsC {
 	event message_t* Receive.receive(message_t* buf,void* payload, uint8_t len) {
 		if (len != sizeof(message_t)) {
 			dbgerror("radio_rec","Error receiving a packet!\n");
+			++error_count;
+			long long int alctual_time = sim_time()
+			dbg_clear("radio_rec", "error ratio at time %lld \n", alctual_time);
+			double ratio = error_count / alctual_time;
+			dbg_clear("radio_rec", "error ratio: %lf \n", ratio);
 			return buf;
 		} else {
 			my_msg_t* mess = (my_msg_t*)payload;
