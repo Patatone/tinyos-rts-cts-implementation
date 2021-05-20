@@ -9,6 +9,8 @@ module RtsCtsC {
 		interface AMSend;
 		interface SplitControl;
 		interface Receive;
+		
+		interface Timer<TMilli> as EndTimer;
 		interface Timer<TMilli> as MilliTimer2;
 		interface Timer<TMilli> as MilliTimer3;
 		interface Timer<TMilli> as MilliTimer4;
@@ -20,11 +22,13 @@ module RtsCtsC {
 
 	bool locked;
 	uint16_t msg_id = 0;
-	uint16_t error_count = 0;
+	uint16_t error_count[5] = {0};
+	const uint32_t SIMULATION_MAX_TIME = 1000*60*10;
+	
+	//Buffer variables
 	message_t packet;
-	double alctual_time;
-	float error_ratio;
-
+	uint8_t i;
+	
 	void sendReq();
 	void sendResp();
 
@@ -69,6 +73,8 @@ module RtsCtsC {
 
   //***************** SplitControl interface ********************//
 	event void SplitControl.startDone(error_t err){
+		//Start 10 minutes timer
+		call EndTimer.startOneShot(SIMULATION_MAX_TIME);
 		if(err == SUCCESS) {
 			dbg("radio","Radio on at time %lld \n", sim_time());
 			switch (TOS_NODE_ID) {
@@ -116,6 +122,34 @@ module RtsCtsC {
 	event void MilliTimer6.fired() {
 		sendReq();
 	}
+	
+	event void EndTimer.fired() {
+		switch (TOS_NODE_ID) {
+			case 1:
+			dbg("radio","\n\nSimulation terminated after: %hhu \n", SIMULATION_MAX_TIME);	
+			for (i = 0; i < 5; ++i) {
+				dbg("radio","Stats for the node: %u \n", i+2);
+				dbg_clear("radio", "\t\t Errors number: %hhu \n", error_count[i]);
+				dbg_clear("radio", "\t\t Error ratio: %f [errors/s]\n", error_count[i]/SIMULATION_MAX_TIME);
+			}
+			break;
+			case 2:
+			call MilliTimer2.stop();
+			break;
+			case 3:
+			call MilliTimer3.stop();
+			break;
+			case 4:
+			call MilliTimer4.stop();
+			break;
+			case 5:
+			call MilliTimer5.stop();
+			break;
+			case 6:
+			call MilliTimer6.stop();
+			break;
+		}
+	}
 
   //********************* AMSend interface ****************//
 	event void AMSend.sendDone(message_t* buf,error_t err) {
@@ -130,15 +164,8 @@ module RtsCtsC {
 
   //***************************** Receive interface *****************//
 	event message_t* Receive.receive(message_t* buf,void* payload, uint8_t len) {
-		if (len != sizeof(message_t)) {
+		if (len != sizeof(my_msg_t)) {
 			dbgerror("radio_rec","Error receiving a packet!\n");
-			++error_count;
-			alctual_time = ((double)sim_time()-100)/10000000000;
-			error_ratio = error_count / alctual_time;
-			dbg_clear("radio_rec", "\t\t Time since SplitControl: %lf [s]\n", alctual_time);
-			//I have to do different counters
-			dbg_clear("radio_rec", "\t\t Errors: %hhu \n", error_count);
-			dbg_clear("radio_rec", "\t\t Error ratio: %f [errors/s]\n", error_ratio);
 			return buf;
 		} else {
 			my_msg_t* mess = (my_msg_t*)payload;
