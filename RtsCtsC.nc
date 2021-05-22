@@ -56,6 +56,7 @@ module RtsCtsC {
 				dbg_clear("radio_pack", "\t\t msg_type: %hhu \n ", mess->msg_type);
 				dbg_clear("radio_pack", "\t\t msg_id: %hhu \n", mess->msg_id);
 				dbg_clear("radio_pack", "\t\t sender_id: %hhu \n", mess->sender_id);
+				dbg_clear("radio_pack", "\n");
 			}
 		}
 	}
@@ -126,11 +127,11 @@ module RtsCtsC {
 	event void EndTimer.fired() {
 		switch (TOS_NODE_ID) {
 			case 1:
-			dbg("radio","\n\nSimulation terminated after: %hhu \n", SIMULATION_MAX_TIME);	
+			dbg("radio",">>> Simulation terminated after: %lu seconds. <<<\n", SIMULATION_MAX_TIME/1000);	
 			for (i = 0; i < 5; ++i) {
-				dbg("radio","Stats for the node: %u \n", i+2);
+				dbg("radio","> Stats for the node: %u \n", i+2);
 				dbg_clear("radio", "\t\t Errors number: %hhu \n", error_count[i]);
-				dbg_clear("radio", "\t\t Error ratio: %f [errors/s]\n", error_count[i]/SIMULATION_MAX_TIME);
+				dbg_clear("radio", "\t\t Error ratio: %f \n", error_count[i]/SIMULATION_MAX_TIME);
 			}
 			break;
 			case 2:
@@ -157,6 +158,7 @@ module RtsCtsC {
 			locked = FALSE;
 			dbg("radio_send", "Packet sent...");
 			dbg_clear("radio_send", " at time %s \n", sim_time_string());
+			dbg_clear("radio_send", "\n");
 		} else {
 			dbgerror("radio_send","Error in AMSend.sendDone!\n");
 		}
@@ -176,7 +178,7 @@ module RtsCtsC {
 			dbg_clear("radio_pack", "\t\t msg_type: %hhu \n", mess->msg_type);
 			dbg_clear("radio_pack", "\t\t msg_id: %hhu \n", mess->msg_id);
 			dbg_clear("radio_pack", "\t\t sender_id: %hhu \n", mess->sender_id);
-
+			dbg_clear("radio_pack", "\n");
 /*		if (mess->msg_type == REQ) {
 			sendResp();
 		}*/
