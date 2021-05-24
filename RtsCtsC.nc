@@ -22,12 +22,17 @@ module RtsCtsC {
 
 	bool locked;
 	uint16_t msg_id = 0;
-	uint16_t error_count[5] = {0};
+	uint16_t received_packets[5] = { 0 };
+	
 	const uint32_t SIMULATION_MAX_TIME = 1000*60*10;
+	const uint16_t MOTES_RATE[] = { 1000*2, 1000*3, 1000*4, 1000*5, 1000*1 };
 	
 	//Buffer variables
 	message_t packet;
 	uint8_t i;
+	uint16_t expected_packets;
+	uint16_t not_arrived_packets;
+	
 	
 	void sendReq();
 	void sendResp();
@@ -51,11 +56,11 @@ module RtsCtsC {
 			if(call AMSend.send(1, &packet,sizeof(my_msg_t)) == SUCCESS) {
 				locked = TRUE;
 				dbg("radio_send", "Packet passed to lower layer successfully!\n");
-				dbg("radio_pack",">>>Pack\n \t Payload length %hhu \n", call Packet.payloadLength(&packet) );
+				dbg("radio_pack",">>>Pack\n \t Payload length %u \n", call Packet.payloadLength(&packet) );
 				dbg_clear("radio_pack","\t\t Payload \n" );
 				dbg_clear("radio_pack", "\t\t msg_type: %hhu \n ", mess->msg_type);
-				dbg_clear("radio_pack", "\t\t msg_id: %hhu \n", mess->msg_id);
-				dbg_clear("radio_pack", "\t\t sender_id: %hhu \n", mess->sender_id);
+				dbg_clear("radio_pack", "\t\t msg_id: %u \n", mess->msg_id);
+				dbg_clear("radio_pack", "\t\t sender_id: %u \n", mess->sender_id);
 				dbg_clear("radio_pack", "\n");
 			}
 		}
@@ -80,19 +85,19 @@ module RtsCtsC {
 			dbg("radio","Radio on at time %lld \n", sim_time());
 			switch (TOS_NODE_ID) {
 				case 2:
-				call MilliTimer2.startPeriodic(2000);
+				call MilliTimer2.startPeriodic(MOTES_RATE[0]);
 				break;
 				case 3:
-				call MilliTimer3.startPeriodic(3000);
+				call MilliTimer3.startPeriodic(MOTES_RATE[1]);
 				break;
 				case 4:
-				call MilliTimer4.startPeriodic(4000);
+				call MilliTimer4.startPeriodic(MOTES_RATE[2]);
 				break;
 				case 5:
-				call MilliTimer5.startPeriodic(5000);
+				call MilliTimer5.startPeriodic(MOTES_RATE[3]);
 				break;
 				case 6:
-				call MilliTimer6.startPeriodic(1000);
+				call MilliTimer6.startPeriodic(MOTES_RATE[4]);
 				break;
 			}
 		} else {
@@ -127,11 +132,16 @@ module RtsCtsC {
 	event void EndTimer.fired() {
 		switch (TOS_NODE_ID) {
 			case 1:
-			dbg("radio",">>> Simulation terminated after: %lu seconds. <<<\n", SIMULATION_MAX_TIME/1000);	
+			dbg_clear("radio", "\n\n");
+			dbg("radio",">>> Simulation terminated after: %lu seconds <<< \n\n", SIMULATION_MAX_TIME/1000);	
 			for (i = 0; i < 5; ++i) {
 				dbg("radio","> Stats for the node: %u \n", i+2);
-				dbg_clear("radio", "\t\t Errors number: %hhu \n", error_count[i]);
-				dbg_clear("radio", "\t\t Error ratio: %f \n", error_count[i]/SIMULATION_MAX_TIME);
+				expected_packets = (uint16_t)(SIMULATION_MAX_TIME/MOTES_RATE[i]);
+				dbg_clear("radio", "\t\t Expected packets: %u \n", expected_packets);
+				dbg_clear("radio", "\t\t Received packets: %u \n", received_packets[i]);
+				not_arrived_packets = expected_packets - received_packets[i];
+				dbg_clear("radio", "\t\t Not arrived packets: %u \n", not_arrived_packets);
+				dbg_clear("radio", "\t\t Packet Error Rate: %f \n", (float)not_arrived_packets/expected_packets);
 			}
 			break;
 			case 2:
@@ -171,13 +181,13 @@ module RtsCtsC {
 			return buf;
 		} else {
 			my_msg_t* mess = (my_msg_t*)payload;
-			
 			dbg("radio_rec","Message received at time %s \n", sim_time_string());
-			dbg("radio_pack",">>>Pack \n \t Payload length %hhu \n", call Packet.payloadLength(buf));
+			dbg("radio_rec","This is the %u message correctly received by this node. \n", ++received_packets[(mess->sender_id)-2]);
+			dbg("radio_pack",">>>Pack \n \t Payload length %u \n", call Packet.payloadLength(buf));
 			dbg_clear("radio_pack","\t\t Payload \n");
 			dbg_clear("radio_pack", "\t\t msg_type: %hhu \n", mess->msg_type);
-			dbg_clear("radio_pack", "\t\t msg_id: %hhu \n", mess->msg_id);
-			dbg_clear("radio_pack", "\t\t sender_id: %hhu \n", mess->sender_id);
+			dbg_clear("radio_pack", "\t\t msg_id: %u \n", mess->msg_id);
+			dbg_clear("radio_pack", "\t\t sender_id: %u \n", mess->sender_id);
 			dbg_clear("radio_pack", "\n");
 /*		if (mess->msg_type == REQ) {
 			sendResp();
