@@ -1,3 +1,9 @@
+/**
+ * 	locked: It is true during the sending phase until it finishes
+ * 	rts_cts_locked: It is true depeding on the RTS/CTS mechanism
+ *
+ */
+
 #include "RtsCts.h"
 #include "Timer.h"
 
@@ -21,10 +27,13 @@ module RtsCtsC {
 } implementation {
 
 	bool locked;
+	bool rts_cts_locked;
 	uint16_t msg_id = 0;
 	uint16_t received_packets[5] = { 0 };
 	
-	const uint32_t SIMULATION_MAX_TIME = 1000*60*10;
+	const uint32_t NAV_TIME = 1000; 
+	const bool RTS_CTS_ENABLED = TRUE;
+	const uint32_t SIMULATION_MAX_TIME = (1000*60*10)+100;
 	const uint16_t MOTES_RATE[] = { 1000*2, 1000*3, 1000*4, 1000*5, 1000*1 };
 	
 	//Buffer variables
@@ -34,10 +43,29 @@ module RtsCtsC {
 	uint16_t not_arrived_packets;
 	
 	
+	void sendRtsCts(uint8_t msg_type);
 	void sendReq();
 	void sendResp();
-
-  //***************** Task send request ********************//
+	void printPacket(uint8_t t_msg_type, uint16_t t_msg_id, uint16_t t_sender_id, message_t* buf);
+	
+	
+	//***************** Simple function to print the packet ********************//
+	void printPacket(uint8_t t_msg_type, uint16_t t_msg_id, uint16_t t_sender_id, message_t* buf) {
+		if (buf != FIELD_NOT_USED)
+			dbg("radio_pack",">>>Pack\n \t Payload length %u \n", call Packet.payloadLength(buf));
+		else 
+			dbg("radio_pack",">>>Pack\n \t Payload length %u \n", call Packet.payloadLength(&packet));
+		dbg_clear("radio_pack","\t\t Payload \n" );
+		if (t_msg_type != FIELD_NOT_USED)
+			dbg_clear("radio_pack", "\t\t msg_type: %hhu \n ", t_msg_type);
+		if (t_msg_id != FIELD_NOT_USED)
+			dbg_clear("radio_pack", "\t\t msg_id: %u \n", t_msg_id);
+		if (t_sender_id != FIELD_NOT_USED)
+			dbg_clear("radio_pack", "\t\t sender_id: %u \n", t_sender_id);
+		dbg_clear("radio_pack", "\n");
+	}
+	
+  	//***************** Task send request ********************//
 	void sendReq() {
 		if (locked) {
 			dbgerror("radio_send","Error during sendReq, channel is locked!\n");
@@ -56,16 +84,34 @@ module RtsCtsC {
 			if(call AMSend.send(1, &packet,sizeof(my_msg_t)) == SUCCESS) {
 				locked = TRUE;
 				dbg("radio_send", "Packet passed to lower layer successfully!\n");
-				dbg("radio_pack",">>>Pack\n \t Payload length %u \n", call Packet.payloadLength(&packet) );
-				dbg_clear("radio_pack","\t\t Payload \n" );
-				dbg_clear("radio_pack", "\t\t msg_type: %hhu \n ", mess->msg_type);
-				dbg_clear("radio_pack", "\t\t msg_id: %u \n", mess->msg_id);
-				dbg_clear("radio_pack", "\t\t sender_id: %u \n", mess->sender_id);
-				dbg_clear("radio_pack", "\n");
+				printPacket(mess->msg_type, mess->msg_id, mess->sender_id, FIELD_NOT_USED);
 			}
 		}
 	}
+	
+	//***************** Task send RTS/CTS ********************//
+	void sendRtsCts(uint8_t msg_type) {
+		if (locked) {
+			dbgerror("radio_send","Error during sendReq, channel is locked!\n");
+			return;
+		} else {
+			rts_cts_msg_t* mess=(rts_cts_msg_t*)(call Packet.getPayload(&packet,sizeof(rts_cts_msg_t)));
+			if (mess == NULL) {
+				dbgerror("radio_send","Error during sendReq, mess is NULL!\n");
+				return;
+			}
+			mess->sender_id = TOS_NODE_ID;
+			mess->msg_type = msg_type;
 
+			dbg("radio_send", "[RTS/CTS] Try to send a request %s \n", sim_time_string());
+			if(call AMSend.send(1, &packet,sizeof(my_msg_t)) == SUCCESS) {
+				locked = TRUE;
+				dbg("radio_send", "Packet passed to lower layer successfully!\n");
+				printPacket(mess->msg_type, FIELD_NOT_USED, mess->sender_id, FIELD_NOT_USED);
+			}
+		}
+	}
+	
   //****************** Task send response *****************//
 	void sendResp() {
 
@@ -176,24 +222,24 @@ module RtsCtsC {
 
   //***************************** Receive interface *****************//
 	event message_t* Receive.receive(message_t* buf,void* payload, uint8_t len) {
-		if (len != sizeof(my_msg_t)) {
-			dbgerror("radio_rec","Error receiving a packet!\n");
-			return buf;
-		} else {
+		if (len == sizeof(my_msg_t)) {
 			my_msg_t* mess = (my_msg_t*)payload;
-			dbg("radio_rec","Message received at time %s \n", sim_time_string());
+			dbg("radio_rec","Massage received at time %s \n", sim_time_string());
 			dbg("radio_rec","This is the %u message correctly received by this node. \n", ++received_packets[(mess->sender_id)-2]);
-			dbg("radio_pack",">>>Pack \n \t Payload length %u \n", call Packet.payloadLength(buf));
-			dbg_clear("radio_pack","\t\t Payload \n");
-			dbg_clear("radio_pack", "\t\t msg_type: %hhu \n", mess->msg_type);
-			dbg_clear("radio_pack", "\t\t msg_id: %u \n", mess->msg_id);
-			dbg_clear("radio_pack", "\t\t sender_id: %u \n", mess->sender_id);
-			dbg_clear("radio_pack", "\n");
-/*		if (mess->msg_type == REQ) {
-			sendResp();
-		}*/
-			return buf;
+			printPacket(mess->msg_type, mess->msg_id, mess->sender_id, buf);
+		} else if (len == sizeof(rts_cts_msg_t)) {
+			rts_cts_msg_t* mess = (rts_cts_msg_t*)payload;
+			dbg("radio_rec","[RTS/CTS] Request received at time %s \n", sim_time_string());
+			printPacket(mess->msg_type, FIELD_NOT_USED, mess->sender_id, buf);
+		} else {
+			dbgerror("radio_rec","Error receiving a packet!\n");
 		}
+/*		
+		if (mess->msg_type == REQ) {
+			sendResp();
+		}   
+*/
+		return buf;
 	}
 
 }

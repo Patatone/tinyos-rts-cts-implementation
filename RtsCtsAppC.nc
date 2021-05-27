@@ -8,7 +8,6 @@ implementation {
 	components new AMReceiverC(AM_MY_MSG);
 	components ActiveMessageC;
 	components new AMSenderC(AM_MY_MSG);
-	
 	components new TimerMilliC() as EndTimer;
 	components new TimerMilliC() as MilliTimer2;
 	components new TimerMilliC() as MilliTimer3;
@@ -21,7 +20,6 @@ implementation {
 	App.AMSend -> AMSenderC;
 	App.SplitControl -> ActiveMessageC;
 	App.Packet -> AMSenderC;
-	
 	App.EndTimer -> EndTimer;
 	App.MilliTimer2 -> MilliTimer2;
 	App.MilliTimer3 -> MilliTimer3;
@@ -29,5 +27,4 @@ implementation {
 	App.MilliTimer5 -> MilliTimer5;
 	App.MilliTimer6 -> MilliTimer6;
 }
-
 
