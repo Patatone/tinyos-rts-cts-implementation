@@ -1,5 +1,5 @@
 /**
- * 	FIELD_NOT_USED: Used we don't want to compile a field of a function
+ * 	NULL_VAL: Used we don't want to compile a field of a function
  *
  */
  
@@ -7,24 +7,30 @@
 #define RTSCTS_H
 
 typedef nx_struct my_msg {
-	nx_uint8_t msg_type; 
 	nx_uint16_t msg_id;
 	nx_uint16_t sender_id;
 } my_msg_t;
 
-typedef nx_struct rts_cts_msg {
-	nx_uint8_t msg_type; 
+typedef nx_struct cts_msg {
 	nx_uint16_t sender_id;
-} rts_cts_msg_t;
+} cts_msg_t;
 
-#define REQ 1
-#define RTS 2
-#define CTS 3
+typedef nx_struct rts_msg {
+	nx_uint16_t sender_id;
+} rts_msg_t;
 
-#define FIELD_NOT_USED 0
+typedef nx_struct report_msg {
+	nx_uint16_t message_count;
+	nx_uint16_t sender_id;
+} report_msg_t;
+
+#define NULL_VAL 0
 
 enum{
 	AM_MY_MSG = 6,
+	AM_RTS_MSG = 6,
+	AM_CTS_MSG = 6,
+	AM_REPORT_MSG = 6,
 };
 
 #endif
