@@ -5,6 +5,7 @@
  */
 
 #include "RtsCts.h"
+#include <stdlib.h>
 #include "Timer.h"
 
 module RtsCtsC {
@@ -43,10 +44,12 @@ module RtsCtsC {
 	uint16_t msg_id = 0;
 	uint16_t received_packets[5] = { 0 };
 	
+	//Constants
 	const uint32_t NAV_TIME = 1000; 
 	const bool RTS_CTS_ENABLED = TRUE;
 	const uint32_t SIMULATION_MAX_TIME = (1000*60*10)+100;
 	const uint16_t MOTES_RATE[] = { 1000*2, 1000*3, 1000*4, 1000*5, 1000*1 };
+	const double LAMBDA_VALUES[5] = { 0.05, 0.06, 0.07, 0.02, 0.01 };
 	
 	//Buffer variables
 	message_t packet;
@@ -58,8 +61,16 @@ module RtsCtsC {
 	void sendCts();
 	void sendRts();
 	void sendMsg();
+	double ran_expo(double lambda);
 	
 	
+	//***************** Random number by an exp distribution ********************//
+	double ran_expo(double lambda){
+    	double u;
+    	u = rand() / (RAND_MAX + 1.0);
+    	return -log(1 - u) / lambda;
+	}
+
   	//***************** Task send request ********************//
 	void sendMsg() {
 		if (locked) {
@@ -260,6 +271,18 @@ module RtsCtsC {
 			dbg_clear("radio_send", "\n");
 		} else {
 			dbgerror("radio_send","Error in RtsSend.sendDone!\n");
+		}
+	}
+	
+	//********************* RtsSend interface ****************//
+	event void ReportSend.sendDone(message_t* buf, error_t err) {
+		if(&packet == buf && err == SUCCESS) {
+			locked = FALSE;
+			dbg("radio_send", "Packet sent...");
+			dbg_clear("radio_send", " at time %s \n", sim_time_string());
+			dbg_clear("radio_send", "\n");
+		} else {
+			dbgerror("radio_send","Error in ReportSend.sendDone!\n");
 		}
 	}
 	
