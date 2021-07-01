@@ -50,6 +50,8 @@ print "Activate debug message on channel radio_pack"
 t.addChannel("radio_pack", out);
 print "Activate debug message on channel role"
 t.addChannel("role", out);
+print "Activate debug message on channel timer"
+t.addChannel("timer", out);
 
 
 print "Creating node 1...";

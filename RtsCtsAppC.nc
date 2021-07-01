@@ -15,9 +15,10 @@ implementation {
 	components new AMSenderC(AM_RTS_CTS_MSG) as RtsCtsSender;
 	
 	components new TimerMilliC() as EndTimer;
-	components new TimerMilliC() as MilliTimer;
+	components new TimerMilliC() as SendMsgTimer;
 	components new TimerMilliC() as SendReportTimer;
-
+	components new TimerMilliC() as BackOffTimer;
+	components new TimerMilliC() as SendCtsTimer;
 
 	App.Boot -> MainC.Boot;
 	
@@ -32,7 +33,8 @@ implementation {
 	
 	App.SplitControl -> ActiveMessageC;
 	App.EndTimer -> EndTimer;
-	App.MilliTimer -> MilliTimer;
+	App.SendMsgTimer -> SendMsgTimer;
 	App.SendReportTimer -> SendReportTimer;
+	App.BackOffTimer -> BackOffTimer;
 }
 
