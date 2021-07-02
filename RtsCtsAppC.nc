@@ -18,8 +18,9 @@ implementation {
 	components new TimerMilliC() as SendMsgTimer;
 	components new TimerMilliC() as SendReportTimer;
 	components new TimerMilliC() as BackOffTimer;
-	components new TimerMilliC() as SendCtsTimer;
-
+	components new TimerMilliC() as SifsMsgTimer;
+	components new TimerMilliC() as SifsCtsTimer;
+	
 	App.Boot -> MainC.Boot;
 	
 	App.MsgReceiver -> MsgReceiver;
@@ -36,5 +37,7 @@ implementation {
 	App.SendMsgTimer -> SendMsgTimer;
 	App.SendReportTimer -> SendReportTimer;
 	App.BackOffTimer -> BackOffTimer;
+	App.SifsMsgTimer -> SifsMsgTimer;
+	App.SifsCtsTimer -> SifsCtsTimer;
 }
 

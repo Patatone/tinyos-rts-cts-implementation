@@ -52,7 +52,8 @@ print "Activate debug message on channel role"
 t.addChannel("role", out);
 print "Activate debug message on channel timer"
 t.addChannel("timer", out);
-
+print "Activate debug message on channel general"
+t.addChannel("general", out);
 
 print "Creating node 1...";
 node1 =t.getNode(1);
