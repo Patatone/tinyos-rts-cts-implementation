@@ -12,12 +12,12 @@
 
 typedef nx_struct my_msg {
 	nx_uint16_t msg_count;
-	nx_uint16_t sender_id;
+	nx_uint8_t sender_id;
 	nx_uint8_t report;
 } my_msg_t;
 
 typedef nx_struct rts_cts_msg {
-	nx_uint16_t sender_id;
+	nx_uint8_t sender_id;
 	nx_uint8_t type;
 } rts_cts_msg_t;
 

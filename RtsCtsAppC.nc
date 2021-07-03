@@ -16,7 +16,7 @@ implementation {
 	
 	components new TimerMilliC() as EndTimer;
 	components new TimerMilliC() as SendMsgTimer;
-	components new TimerMilliC() as SendReportTimer;
+	components new TimerMilliC() as SimulationEndTimer;
 	components new TimerMilliC() as BackOffTimer;
 	components new TimerMilliC() as SifsMsgTimer;
 	components new TimerMilliC() as SifsCtsTimer;
@@ -35,7 +35,7 @@ implementation {
 	App.SplitControl -> ActiveMessageC;
 	App.EndTimer -> EndTimer;
 	App.SendMsgTimer -> SendMsgTimer;
-	App.SendReportTimer -> SendReportTimer;
+	App.SimulationEndTimer -> SimulationEndTimer;
 	App.BackOffTimer -> BackOffTimer;
 	App.SifsMsgTimer -> SifsMsgTimer;
 	App.SifsCtsTimer -> SifsCtsTimer;

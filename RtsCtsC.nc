@@ -27,7 +27,7 @@ module RtsCtsC {
 		interface Receive as MsgReceiver;
 		
 		interface Timer<TMilli> as EndTimer;
-		interface Timer<TMilli> as SendReportTimer;
+		interface Timer<TMilli> as SimulationEndTimer;
 		interface Timer<TMilli> as SendMsgTimer;
 		interface Timer<TMilli> as BackOffTimer;
 		interface Timer<TMilli> as SifsCtsTimer;
@@ -45,7 +45,7 @@ module RtsCtsC {
 	uint16_t received_packets[5] = { 0 };
 	
 	//Constants
-	const uint32_t X = 1000; 
+	const uint32_t X = 750; 
 	const bool RTS_CTS_ENABLED = FALSE;
 	const uint32_t SIMULATION_MAX_TIME = (500*60*10)+100;
 	const float LAMBDA_VALUES[5] = { 1.0 , 1.7, 4.2, 2.5, 3.3 };
@@ -91,7 +91,7 @@ module RtsCtsC {
 				dbgerror("radio_send","Error during sendMsg, mess is NULL!\n");
 				return;
 			}
-			mess->sender_id = TOS_NODE_ID;
+			mess->sender_id = (uint8_t)TOS_NODE_ID;
 			if (report) {
 				mess->report = 1;
 				mess->msg_count = msg_count;
@@ -107,7 +107,7 @@ module RtsCtsC {
 				dbg("radio_pack","Payload\n");
 				dbg_clear("radio_pack", "\t Payload length %u \n", call MsgPacket.payloadLength(&packet));
 				dbg_clear("radio_pack", "\t msg_count: %u \n", mess->msg_count);
-				dbg_clear("radio_pack", "\t sender_id: %u \n", mess->sender_id);
+				dbg_clear("radio_pack", "\t sender_id: %hhu \n", mess->sender_id);
 				if (report) {
 					dbg_clear("radio_pack", "\t message type: REPORT\n");
 				} else {
@@ -130,7 +130,7 @@ module RtsCtsC {
 				return;
 			}
 			
-			rts_cts->sender_id = TOS_NODE_ID;
+			rts_cts->sender_id = (uint8_t)TOS_NODE_ID;
 			rts_cts->type = type;
 	
 			if(call RtsCtsSend.send(AM_BROADCAST_ADDR, &packet,sizeof(rts_cts_msg_t)) == SUCCESS) {
@@ -163,7 +163,7 @@ module RtsCtsC {
 			dbg("radio","Radio on at time %s \n", sim_time_string());
 			if (TOS_NODE_ID != 1) {
 				startTimer();
-				call SendReportTimer.startOneShot(SIMULATION_MAX_TIME+TOS_NODE_ID*100);
+				call SimulationEndTimer.startOneShot(SIMULATION_MAX_TIME+TOS_NODE_ID*100);
 			}
 		} else {
 			dbgerror("radio","Radio error!\n");
@@ -188,11 +188,10 @@ module RtsCtsC {
 		} else {
 			dbg_clear("timer","\n");
 			sendMsg(0);
-			startTimer();
 		}
 	}
 	
-	event void SendReportTimer.fired() {
+	event void SimulationEndTimer.fired() {
 		sendMsg(1);
 	}
 	
@@ -216,6 +215,9 @@ module RtsCtsC {
 			dbgerror("radio_send","Error in MsgSend.sendDone!\n");
 		}
 		printSpacer();
+		if (call SimulationEndTimer.isRunning()) {
+			startTimer();
+		}
 	}
 	
 	//********************* RtsCtsSend interface ****************//
@@ -236,7 +238,7 @@ module RtsCtsC {
 			dbg("radio_rec","[<<<] Message received at time %s \n", sim_time_string());	
 			dbg("radio_pack","Details\n");
 			dbg_clear("radio_pack", "\t Payload length %u \n", call MsgPacket.payloadLength(buf));
-			dbg_clear("radio_pack", "\t sender_id: %u \n", mess->sender_id);
+			dbg_clear("radio_pack", "\t sender_id: %hhu \n", mess->sender_id);
 			dbg_clear("radio_pack", "\t Is report: %hhu \n", mess->report);
 			if (mess->report) {		
 				dbg_clear("radio_pack", "\t Expected packets: %u \n", mess->msg_count);
@@ -256,9 +258,8 @@ module RtsCtsC {
 	
 	//***************** Required to avoid collisions ********************//
 	event void SifsMsgTimer.fired() {
-		sendMsg(0);
 		tran_requested = FALSE;
-		startTimer();
+		sendMsg(0);
 	}
 	
 	//***************** Required to avoid collisions ********************//
@@ -274,7 +275,7 @@ module RtsCtsC {
 	
 	//***************** When the backoff period ends, we can have new transmissions ********************//
 	event void BackOffTimer.fired() {
-		dbg("timer", "BackOffTimer fired at time %s.\n", sim_time_string());
+		dbg("timer", "Back off period finished at %s.\n", sim_time_string());
 		back_off = FALSE;
 	}
 	
@@ -283,7 +284,7 @@ module RtsCtsC {
 		if (len == sizeof(rts_cts_msg_t)) {
 			rts_cts_msg_t* rts_cts = (rts_cts_msg_t*)payload;	
 			if (rts_cts->type == CTS) {
-				dbg("radio_rec","[<<<] Received a CTS from %u at time %s. ", rts_cts->sender_id, sim_time_string());
+				dbg("radio_rec","[<<<] Received a CTS from %hhu at time %s. ", rts_cts->sender_id, sim_time_string());
 				if (tran_requested) {
 					dbg_clear("radio_rec", "Ready to send the message.\n");
 					call SifsMsgTimer.startOneShot(10);
@@ -291,10 +292,10 @@ module RtsCtsC {
 					dbg_clear("radio_rec", "Starting a back off.\n");
 					startBackOff();
 				} else {
-					dbg_clear("radio_rec", "\n");
+					dbg_clear("radio_rec", "Already in back off.\n");
 				}
 			} else {
-				dbg("radio_rec","[<<<] Received a RTS from %u at time %s. ", rts_cts->sender_id, sim_time_string());
+				dbg("radio_rec","[<<<] Received a RTS from %hhu at time %s. ", rts_cts->sender_id, sim_time_string());
 				if (TOS_NODE_ID == 1) {
 					dbg_clear("radio_rec", "Ready to send the CTS.\n");
 					call SifsCtsTimer.startOneShot(10);
