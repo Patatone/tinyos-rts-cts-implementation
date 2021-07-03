@@ -14,9 +14,9 @@ implementation {
 	components new AMSenderC(AM_MY_MSG) as MsgSender;
 	components new AMSenderC(AM_RTS_CTS_MSG) as RtsCtsSender;
 	
-	components new TimerMilliC() as EndTimer;
-	components new TimerMilliC() as SendMsgTimer;
 	components new TimerMilliC() as SimulationEndTimer;
+	components new TimerMilliC() as SendMsgTimer;
+	components new TimerMilliC() as SendReportTimer;
 	components new TimerMilliC() as BackOffTimer;
 	components new TimerMilliC() as SifsMsgTimer;
 	components new TimerMilliC() as SifsCtsTimer;
@@ -33,9 +33,9 @@ implementation {
 	App.MsgPacket -> MsgSender;
 	
 	App.SplitControl -> ActiveMessageC;
-	App.EndTimer -> EndTimer;
-	App.SendMsgTimer -> SendMsgTimer;
 	App.SimulationEndTimer -> SimulationEndTimer;
+	App.SendMsgTimer -> SendMsgTimer;
+	App.SendReportTimer -> SendReportTimer;
 	App.BackOffTimer -> BackOffTimer;
 	App.SifsMsgTimer -> SifsMsgTimer;
 	App.SifsCtsTimer -> SifsCtsTimer;

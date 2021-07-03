@@ -26,8 +26,8 @@ module RtsCtsC {
 		interface Receive as RtsCtsReceiver;
 		interface Receive as MsgReceiver;
 		
-		interface Timer<TMilli> as EndTimer;
 		interface Timer<TMilli> as SimulationEndTimer;
+		interface Timer<TMilli> as SendReportTimer;
 		interface Timer<TMilli> as SendMsgTimer;
 		interface Timer<TMilli> as BackOffTimer;
 		interface Timer<TMilli> as SifsCtsTimer;
@@ -46,7 +46,7 @@ module RtsCtsC {
 	
 	//Constants
 	const uint32_t X = 750; 
-	const bool RTS_CTS_ENABLED = FALSE;
+	const bool RTS_CTS_ENABLED = TRUE;
 	const uint32_t SIMULATION_MAX_TIME = (500*60*10)+100;
 	const float LAMBDA_VALUES[5] = { 1.0 , 1.7, 4.2, 2.5, 3.3 };
 	
@@ -157,13 +157,12 @@ module RtsCtsC {
 	
  	//***************** SplitControl interface ********************//
 	event void SplitControl.startDone(error_t err){
-		//Start SIMULATION_MAX_TIME timer
-		call EndTimer.startOneShot(SIMULATION_MAX_TIME);
+		call SimulationEndTimer.startOneShot(SIMULATION_MAX_TIME);
 		if(err == SUCCESS) {
 			dbg("radio","Radio on at time %s \n", sim_time_string());
 			if (TOS_NODE_ID != 1) {
 				startTimer();
-				call SimulationEndTimer.startOneShot(SIMULATION_MAX_TIME+TOS_NODE_ID*100);
+				call SendReportTimer.startOneShot(SIMULATION_MAX_TIME+TOS_NODE_ID*100);
 			}
 		} else {
 			dbgerror("radio","Radio error!\n");
@@ -191,17 +190,24 @@ module RtsCtsC {
 		}
 	}
 	
-	event void SimulationEndTimer.fired() {
+	event void SendReportTimer.fired() {
 		sendMsg(1);
 	}
 	
-	event void EndTimer.fired() {
+	event void SimulationEndTimer.fired() {
 		if (TOS_NODE_ID == 1) {
+			if (RTS_CTS_ENABLED) {
+				call SifsCtsTimer.stop();
+			}
 			printSpacer();
 			dbg("radio",">>> Simulation terminated after: %lu seconds <<< \n", SIMULATION_MAX_TIME/1000);	
 			dbg("radio",">>> Sending the Report Messages <<< \n\n");	
 		} else {
 			call SendMsgTimer.stop();
+			if (RTS_CTS_ENABLED) {
+				call SifsMsgTimer.stop();
+				call BackOffTimer.stop();
+			}
 		}
 	}
 	
