@@ -47,7 +47,7 @@ module RtsCtsC {
 	uint16_t received_packets[5] = { 0 };
 	
 	//Constants
-	const uint32_t X = 10; 
+	const uint32_t X = 250; 
 	const bool RTS_CTS_ENABLED = TRUE;
 	const uint32_t SIMULATION_MAX_TIME = (500*60*10)+100;
 	const float LAMBDA_VALUES[5] = { 1.0 , 1.7, 4.2, 2.5, 3.3 };
@@ -166,6 +166,7 @@ module RtsCtsC {
   	//***************** Boot interface ********************//
 	event void Boot.booted() {
 		dbg("boot","Application booted.\n");
+		
 		call SplitControl.start();
 	}
 	
@@ -179,6 +180,7 @@ module RtsCtsC {
 		if(err == SUCCESS) {
 			dbg("radio","Radio on at time %s \n", sim_time_string());
 			if (TOS_NODE_ID != 1) {
+				dbg_clear("radio", "Using labda=%f and X=%lu\n", LAMBDA_VALUES[TOS_NODE_ID-2], X);
 				startTimer();
 				call SendReportTimer.startOneShot(SIMULATION_MAX_TIME+TOS_NODE_ID*100);
 			}
@@ -312,6 +314,9 @@ module RtsCtsC {
 	event void BackOffTimer.fired() {
 		dbg("timer", "Back off period finished at %s.\n", sim_time_string());
 		back_off = FALSE;
+		if (!call SendMsgTimer.isRunning()) {
+			startTimer();
+		}
 	}
 	
 	//***************************** RtsReceive interface *****************//
@@ -326,10 +331,10 @@ module RtsCtsC {
 					if (!back_off) {
 						dbg_clear("radio_rec", "Ready to send the CTS(node: %hhu).\n", rts->sender_id);
 						authorized_node = rts->sender_id;
-						call SifsCtsTimer.startOneShot(8);
 						startBackOff();
+						call SifsCtsTimer.startOneShot(8);
 					} else {
-						bg_clear("radio_rec", "RTS by node %hhu rejected.\n", rts->sender_id);
+						dbg_clear("radio_rec", "Request by node: %hhu rejected.\n", rts->sender_id);
 					}
 				} else {
 					dbg_clear("radio_rec", "Starting a back off.\n");
