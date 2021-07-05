@@ -323,9 +323,14 @@ module RtsCtsC {
 			}	
 			dbg("radio_rec","[<<<] Received a RTS from %hhu at time %s. ", rts->sender_id, sim_time_string());
 				if (TOS_NODE_ID == 1) {
-					dbg_clear("radio_rec", "Ready to send the CTS(node: %hhu).\n", rts->sender_id);
-					authorized_node = rts->sender_id;
-					call SifsCtsTimer.startOneShot(8);
+					if (!back_off) {
+						dbg_clear("radio_rec", "Ready to send the CTS(node: %hhu).\n", rts->sender_id);
+						authorized_node = rts->sender_id;
+						call SifsCtsTimer.startOneShot(8);
+						startBackOff();
+					} else {
+						bg_clear("radio_rec", "RTS by node %hhu rejected.\n", rts->sender_id);
+					}
 				} else {
 					dbg_clear("radio_rec", "Starting a back off.\n");
 					startBackOff();
