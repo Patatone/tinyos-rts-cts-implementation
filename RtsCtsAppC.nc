@@ -7,12 +7,14 @@ implementation {
 	components MainC, RtsCtsC as App;
 	
 	components new AMReceiverC(AM_MY_MSG) as MsgReceiver;
-	components new AMReceiverC(AM_RTS_CTS_MSG) as RtsCtsReceiver;
+	components new AMReceiverC(AM_CTS_MSG) as CtsReceiver;
+	components new AMReceiverC(AM_RTS_MSG) as RtsReceiver;
 	
 	components ActiveMessageC;
 	
 	components new AMSenderC(AM_MY_MSG) as MsgSender;
-	components new AMSenderC(AM_RTS_CTS_MSG) as RtsCtsSender;
+	components new AMSenderC(AM_CTS_MSG) as CtsSender;
+	components new AMSenderC(AM_RTS_MSG) as RtsSender;
 	
 	components new TimerMilliC() as SimulationEndTimer;
 	components new TimerMilliC() as SendMsgTimer;
@@ -24,12 +26,15 @@ implementation {
 	App.Boot -> MainC.Boot;
 	
 	App.MsgReceiver -> MsgReceiver;
-	App.RtsCtsReceiver -> RtsCtsReceiver;
+	App.CtsReceiver -> CtsReceiver;
+	App.RtsReceiver -> RtsReceiver;
 	
-	App.RtsCtsSend -> RtsCtsSender;
+	App.CtsSend -> CtsSender;
+	App.RtsSend -> RtsSender;
 	App.MsgSend -> MsgSender;
 	
-	App.RtsCtsPacket -> RtsCtsSender;
+	App.CtsPacket -> CtsSender;
+	App.RtsPacket -> RtsSender;
 	App.MsgPacket -> MsgSender;
 	
 	App.SplitControl -> ActiveMessageC;

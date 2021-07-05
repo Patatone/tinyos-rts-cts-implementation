@@ -1,6 +1,6 @@
 /**
  * 	locked: It is true during the sending phase until it finishes
- * 	rts_cts_locked: It is true depeding on the RTS/CTS mechanism
+ * 	back_off: It is true depeding on the RTS/CTS mechanism
  *	msg_count: Keeps track of the number of messages sent by a mote
  *	report_count: Keeps track of the number of the received reports
  *  X: It defines the time to wait after receiving an RTS/CTS message
@@ -17,13 +17,16 @@ module RtsCtsC {
 		interface Boot;
 		interface SplitControl;
 		
-		interface Packet as RtsCtsPacket;
+		interface Packet as RtsPacket;
+		interface Packet as CtsPacket;
 		interface Packet as MsgPacket;
 		
 		interface AMSend as MsgSend;
-		interface AMSend as RtsCtsSend;
+		interface AMSend as RtsSend;
+		interface AMSend as CtsSend;
 		
-		interface Receive as RtsCtsReceiver;
+		interface Receive as RtsReceiver;
+		interface Receive as CtsReceiver;
 		interface Receive as MsgReceiver;
 		
 		interface Timer<TMilli> as SimulationEndTimer;
@@ -37,7 +40,6 @@ module RtsCtsC {
 } implementation {
 
 	//Status variables
-	bool tran_requested = FALSE;
 	bool locked = FALSE;
 	bool back_off = FALSE;
 	uint16_t msg_count = 0;
@@ -45,7 +47,7 @@ module RtsCtsC {
 	uint16_t received_packets[5] = { 0 };
 	
 	//Constants
-	const uint32_t X = 750; 
+	const uint32_t X = 10; 
 	const bool RTS_CTS_ENABLED = TRUE;
 	const uint32_t SIMULATION_MAX_TIME = (500*60*10)+100;
 	const float LAMBDA_VALUES[5] = { 1.0 , 1.7, 4.2, 2.5, 3.3 };
@@ -53,10 +55,12 @@ module RtsCtsC {
 	//Buffer variables
 	message_t packet;
 	uint8_t i;
+	uint8_t authorized_node;
 	uint16_t not_arrived_packets;
 	
 
-	void sendRtsCts(bool type);
+	void sendCts();
+	void sendRts();
 	void sendMsg(bool report);
 	uint32_t ran_expo(float lambda);
 	void startTimer();
@@ -80,9 +84,6 @@ module RtsCtsC {
   	//***************** Task send request ********************//
 	void sendMsg(bool report) {
 		if (locked) {
-			if (RTS_CTS_ENABLED) {
-				tran_requested = FALSE;
-			}
 			dbgerror("radio_send","Error during sendMsg, channel is locked!\n");
 			return;
 		} else {
@@ -118,33 +119,50 @@ module RtsCtsC {
 		}
 	}
 	
-	//***************** Task send RtsCts ********************//
-	void sendRtsCts(bool type) {
+	//***************** Task send Rts ********************//
+	void sendRts() {
 		if (locked) {
 			dbgerror("radio_send","Error during sendRts, channel is locked!\n");
 			return;
 		} else {
-			rts_cts_msg_t* rts_cts = (rts_cts_msg_t*)(call RtsCtsPacket.getPayload(&packet,sizeof(rts_cts_msg_t)));
-			if (rts_cts == NULL) {
-				dbgerror("radio_send","Error during sendRtsCts, rts_cts is NULL!\n");
+			rts_msg_t* rts = (rts_msg_t*)(call RtsPacket.getPayload(&packet,sizeof(rts_msg_t)));
+			if (rts == NULL) {
+				dbgerror("radio_send","Error during sendRts, rts is NULL!\n");
 				return;
 			}
 			
-			rts_cts->sender_id = (uint8_t)TOS_NODE_ID;
-			rts_cts->type = type;
+			rts->sender_id = (uint8_t)TOS_NODE_ID;
 	
-			if(call RtsCtsSend.send(AM_BROADCAST_ADDR, &packet,sizeof(rts_cts_msg_t)) == SUCCESS) {
+			if(call RtsSend.send(AM_BROADCAST_ADDR, &packet,sizeof(rts_msg_t)) == SUCCESS) {
 				locked = TRUE;
-				if (type == CTS) {
-					dbg("radio_send", "[>>>] Sending a CTS at %s\n", sim_time_string());
-				} else {
-					dbg("radio_send", "[>>>] Sending a RTS at %s\n", sim_time_string());
-				}
+				dbg("radio_send", "[>>>] Sending a RTS at %s\n", sim_time_string());
 			}
 	
 		}
 	}
 	
+	//***************** Task send Cts ********************//
+	void sendCts() {
+		if (locked) {
+			dbgerror("radio_send","Error during sendCts, channel is locked!\n");
+			return;
+		} else {
+			cts_msg_t* cts = (cts_msg_t*)(call CtsPacket.getPayload(&packet,sizeof(cts_msg_t)));
+			if (cts == NULL) {
+				dbgerror("radio_send","Error during sendCts, cts is NULL!\n");
+				return;
+			}
+			
+			cts->sender_id = (uint8_t)TOS_NODE_ID;
+			cts->authorized_node = authorized_node;
+			
+			if(call CtsSend.send(AM_BROADCAST_ADDR, &packet,sizeof(cts_msg_t)) == SUCCESS) {
+				locked = TRUE;
+				dbg("radio_send", "[>>>] Sending a CTS(node: %hhu) at %s\n", cts->authorized_node, sim_time_string());
+			}
+	
+		}
+	}
   	//***************** Boot interface ********************//
 	event void Boot.booted() {
 		dbg("boot","Application booted.\n");
@@ -177,12 +195,10 @@ module RtsCtsC {
 		if (RTS_CTS_ENABLED) {
 			if (back_off) {
 				dbg_clear("timer","Backoff period\n");
-				tran_requested = FALSE;
 				startTimer();
 			} else {
 				dbg_clear("timer","Possibility to send\n");
-				tran_requested = TRUE;
-				sendRtsCts(RTS);
+				sendRts();
 			}
 		} else {
 			dbg_clear("timer","\n");
@@ -226,14 +242,25 @@ module RtsCtsC {
 		}
 	}
 	
-	//********************* RtsCtsSend interface ****************//
-	event void RtsCtsSend.sendDone(message_t* buf, error_t err) {
+	//********************* RtsSend interface ****************//
+	event void RtsSend.sendDone(message_t* buf, error_t err) {
 		if(&packet == buf && err == SUCCESS) {
 			locked = FALSE;
 			dbg("radio_send", "[>>>] Packet sent...");
 			dbg_clear("radio_send", " at time %s \n", sim_time_string());
 		} else {
-			dbgerror("radio_send","Error in RtsCtsSend.sendDone!\n");
+			dbgerror("radio_send","Error in RtsSend.sendDone!\n");
+		}
+	}
+	
+	//********************* CtsSend interface ****************//
+	event void CtsSend.sendDone(message_t* buf, error_t err) {
+		if(&packet == buf && err == SUCCESS) {
+			locked = FALSE;
+			dbg("radio_send", "[>>>] Packet sent...");
+			dbg_clear("radio_send", " at time %s \n", sim_time_string());
+		} else {
+			dbgerror("radio_send","Error in CtsSend.sendDone!\n");
 		}
 	}
 	
@@ -241,6 +268,9 @@ module RtsCtsC {
 	event message_t* MsgReceiver.receive(message_t* buf,void* payload, uint8_t len) {
 		if (len == sizeof(my_msg_t)) {
 			my_msg_t* mess = (my_msg_t*)payload;
+			if (!call SimulationEndTimer.isRunning() && !mess->report) {
+				return buf;
+			}
 			dbg("radio_rec","[<<<] Message received at time %s \n", sim_time_string());	
 			dbg("radio_pack","Details\n");
 			dbg_clear("radio_pack", "\t Payload length %u \n", call MsgPacket.payloadLength(buf));
@@ -264,13 +294,12 @@ module RtsCtsC {
 	
 	//***************** Required to avoid collisions ********************//
 	event void SifsMsgTimer.fired() {
-		tran_requested = FALSE;
 		sendMsg(0);
 	}
 	
 	//***************** Required to avoid collisions ********************//
 	event void SifsCtsTimer.fired() {
-		sendRtsCts(CTS);
+		sendCts();
 	}
 	
 	//***************** Start the Back Off, someone have to transmit ********************//
@@ -285,30 +314,42 @@ module RtsCtsC {
 		back_off = FALSE;
 	}
 	
-	//***************************** RtsCtsReceive interface *****************//
-	event message_t* RtsCtsReceiver.receive(message_t* buf,void* payload, uint8_t len) {
-		if (len == sizeof(rts_cts_msg_t)) {
-			rts_cts_msg_t* rts_cts = (rts_cts_msg_t*)payload;	
-			if (rts_cts->type == CTS) {
-				dbg("radio_rec","[<<<] Received a CTS from %hhu at time %s. ", rts_cts->sender_id, sim_time_string());
-				if (tran_requested) {
-					dbg_clear("radio_rec", "Ready to send the message.\n");
-					call SifsMsgTimer.startOneShot(10);
-				} else if (!back_off) {
-					dbg_clear("radio_rec", "Starting a back off.\n");
-					startBackOff();
-				} else {
-					dbg_clear("radio_rec", "Already in back off.\n");
-				}
-			} else {
-				dbg("radio_rec","[<<<] Received a RTS from %hhu at time %s. ", rts_cts->sender_id, sim_time_string());
+	//***************************** RtsReceive interface *****************//
+	event message_t* RtsReceiver.receive(message_t* buf,void* payload, uint8_t len) {
+		if (len == sizeof(rts_msg_t)) {
+			rts_msg_t* rts = (rts_msg_t*)payload;
+			if (!call SimulationEndTimer.isRunning()) {
+				return buf;
+			}	
+			dbg("radio_rec","[<<<] Received a RTS from %hhu at time %s. ", rts->sender_id, sim_time_string());
 				if (TOS_NODE_ID == 1) {
-					dbg_clear("radio_rec", "Ready to send the CTS.\n");
-					call SifsCtsTimer.startOneShot(10);
+					dbg_clear("radio_rec", "Ready to send the CTS(node: %hhu).\n", rts->sender_id);
+					authorized_node = rts->sender_id;
+					call SifsCtsTimer.startOneShot(8);
 				} else {
 					dbg_clear("radio_rec", "Starting a back off.\n");
 					startBackOff();
 				}
+		}
+		return buf;
+	}
+	
+	//***************************** CtsReceive interface *****************//
+	event message_t* CtsReceiver.receive(message_t* buf,void* payload, uint8_t len) {
+		if (len == sizeof(cts_msg_t)) {
+			cts_msg_t* cts = (cts_msg_t*)payload;
+			if (!call SimulationEndTimer.isRunning()) {
+				return buf;
+			}	
+			dbg("radio_rec","[<<<] Received a CTS(node: %hhu) from %hhu at time %s. ", cts->authorized_node, cts->sender_id, sim_time_string());
+			if (cts->authorized_node == (uint8_t)TOS_NODE_ID) {
+				dbg_clear("radio_rec", "Ready to send the message.\n");
+				call SifsMsgTimer.startOneShot(8);
+			} else if (!back_off) {
+				dbg_clear("radio_rec", "Starting a back off.\n");
+				startBackOff();
+			} else {
+				dbg_clear("radio_rec", "Already in back off.\n");
 			}
 		}
 		return buf;
