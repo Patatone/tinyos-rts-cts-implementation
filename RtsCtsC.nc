@@ -48,7 +48,7 @@ module RtsCtsC {
 	
 	//Constants
 	const uint32_t X = 250; 
-	const bool RTS_CTS_ENABLED = TRUE;
+	const bool RTS_CTS_ENABLED = FALSE;
 	const uint32_t SIMULATION_MAX_TIME = (500*60*10)+100;
 	const float LAMBDA_VALUES[5] = { 1.0 , 1.7, 4.2, 2.5, 3.3 };
 	
@@ -109,11 +109,7 @@ module RtsCtsC {
 				dbg_clear("radio_pack", "\t Payload length %u \n", call MsgPacket.payloadLength(&packet));
 				dbg_clear("radio_pack", "\t msg_count: %u \n", mess->msg_count);
 				dbg_clear("radio_pack", "\t sender_id: %hhu \n", mess->sender_id);
-				if (report) {
-					dbg_clear("radio_pack", "\t message type: REPORT\n");
-				} else {
-					dbg_clear("radio_pack", "\t message type: NORMAL\n");
-				}
+				dbg_clear("radio_pack", "\t message type: %s \n", report ? "REPORT" : "NORMAL");
 				dbg_clear("radio_pack", "\n");
 			}
 		}
@@ -179,8 +175,12 @@ module RtsCtsC {
 		call SimulationEndTimer.startOneShot(SIMULATION_MAX_TIME);
 		if(err == SUCCESS) {
 			dbg("radio","Radio on at time %s \n", sim_time_string());
-			if (TOS_NODE_ID != 1) {
-				dbg_clear("radio", "Using labda=%f and X=%lu\n", LAMBDA_VALUES[TOS_NODE_ID-2], X);
+			if (TOS_NODE_ID == 1) {
+				dbg("radio", "RTS/CTS mechanism status: %s\n", RTS_CTS_ENABLED ? "ENABLED" : "DISABLED");
+			} else {
+				if (RTS_CTS_ENABLED){
+					dbg("radio", "Using labda=%f and X=%lu\n", LAMBDA_VALUES[TOS_NODE_ID-2], X);
+				}
 				startTimer();
 				call SendReportTimer.startOneShot(SIMULATION_MAX_TIME+TOS_NODE_ID*100);
 			}
