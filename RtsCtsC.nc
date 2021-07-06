@@ -48,9 +48,9 @@ module RtsCtsC {
 	
 	//Constants
 	const uint32_t X = 250; 
-	const bool RTS_CTS_ENABLED = FALSE;
+	const bool RTS_CTS_ENABLED = TRUE;
 	const uint32_t SIMULATION_MAX_TIME = (500*60*10)+100;
-	const float LAMBDA_VALUES[5] = { 1.0 , 1.7, 4.2, 2.5, 3.3 };
+	const float LAMBDA = 1.7;
 	
 	//Buffer variables
 	message_t packet;
@@ -167,7 +167,7 @@ module RtsCtsC {
 	}
 	
 	void startTimer() {
-		call SendMsgTimer.startOneShot(ran_expo(LAMBDA_VALUES[TOS_NODE_ID-2]));
+		call SendMsgTimer.startOneShot(ran_expo(LAMBDA));
 	}
 	
  	//***************** SplitControl interface ********************//
@@ -177,10 +177,10 @@ module RtsCtsC {
 			dbg("radio","Radio on at time %s \n", sim_time_string());
 			if (TOS_NODE_ID == 1) {
 				dbg("radio", "RTS/CTS mechanism status: %s\n", RTS_CTS_ENABLED ? "ENABLED" : "DISABLED");
-			} else {
 				if (RTS_CTS_ENABLED){
-					dbg("radio", "Using labda=%f and X=%lu\n", LAMBDA_VALUES[TOS_NODE_ID-2], X);
+					dbg("radio", "Using labda=%f and X=%lu\n", LAMBDA, X);
 				}
+			} else {
 				startTimer();
 				call SendReportTimer.startOneShot(SIMULATION_MAX_TIME+TOS_NODE_ID*100);
 			}
