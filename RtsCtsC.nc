@@ -179,6 +179,8 @@ module RtsCtsC {
 				dbg("radio", "RTS/CTS mechanism status: %s\n", RTS_CTS_ENABLED ? "ENABLED" : "DISABLED");
 				if (RTS_CTS_ENABLED){
 					dbg("radio", "Using labda=%f and X=%lu\n", LAMBDA, X);
+				} else {
+					dbg("radio", "Using labda=%f\n", LAMBDA);
 				}
 			} else {
 				startTimer();
